@@ -1,0 +1,53 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.numeric_std.all;
+
+entity Quad is
+	port (
+		clk : in std_logic;
+		chA : in std_logic;
+		chB : in std_logic;
+		count : out unsigned (31 downto 0)
+	);
+end entity Quad;
+
+architecture QuadArch of Quad is
+	signal Ar, Br : std_logic_vector (1 downto 0) := "00";
+	signal cnt : unsigned (31 downto 0) := "01000000000000000000000000000000";
+begin
+process (clk)
+	begin
+		if rising_edge(clk) then
+			Ar <= (Ar(0) & chA);
+			Br <= (Br(0) & chB);
+			
+			if (Ar = "01") then		-- rising edge of A
+				if (Br(0) = '0') then 
+					cnt <= cnt + 1;
+				else 
+					cnt <= cnt - 1;
+				end if;
+			elsif (Ar = "10") then		-- falling edge of A
+				if (Br(0) = '1') then 
+					cnt <= cnt + 1;
+				else 
+					cnt <= cnt - 1;
+				end if;
+			elsif (Br = "01") then		-- rising edge of B
+				if (Ar(0) = '1') then 
+					cnt <= cnt + 1;
+				else 
+					cnt <= cnt - 1;
+				end if;
+			elsif (Br = "10") then		-- falling edge of B
+				if (Ar(0) = '0') then 
+					cnt <= cnt + 1;
+				else 
+					cnt <= cnt - 1;
+				end if;
+			end if;
+			
+			count <= cnt;
+		end if;
+	end process;
+end architecture QuadArch;
