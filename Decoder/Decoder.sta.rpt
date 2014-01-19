@@ -1,0 +1,1539 @@
+TimeQuest Timing Analyzer report for Decoder
+Sun Jan 19 23:17:23 2014
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Minimum Pulse Width: 'clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Propagation Delay
+ 20. Minimum Propagation Delay
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'clk'
+ 27. Fast Model Hold: 'clk'
+ 28. Fast Model Minimum Pulse Width: 'clk'
+ 29. Setup Times
+ 30. Hold Times
+ 31. Clock to Output Times
+ 32. Minimum Clock to Output Times
+ 33. Propagation Delay
+ 34. Minimum Propagation Delay
+ 35. Multicorner Timing Analysis Summary
+ 36. Setup Times
+ 37. Hold Times
+ 38. Clock to Output Times
+ 39. Minimum Clock to Output Times
+ 40. Progagation Delay
+ 41. Minimum Progagation Delay
+ 42. Setup Transfers
+ 43. Hold Transfers
+ 44. Report TCCS
+ 45. Report RSKM
+ 46. Unconstrained Paths
+ 47. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Decoder                                                           ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------+
+; SDC File List                                       ;
++-----------------+--------+--------------------------+
+; SDC File Path   ; Status ; Read at                  ;
++-----------------+--------+--------------------------+
+; Decoder.out.sdc ; OK     ; Sun Jan 19 23:17:23 2014 ;
++-----------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 20.22 MHz ; 20.22 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -29.455 ; -844.505      ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 8.758 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                            ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                         ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; -29.455 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.005     ; 49.490     ;
+; -29.432 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.005     ; 49.467     ;
+; -29.403 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.004     ; 49.439     ;
+; -29.359 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.412     ;
+; -29.353 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.005     ; 49.388     ;
+; -29.336 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.389     ;
+; -29.326 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.379     ;
+; -29.315 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.005     ; 49.350     ;
+; -29.307 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 49.361     ;
+; -29.303 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.356     ;
+; -29.274 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 49.328     ;
+; -29.258 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.005     ; 49.293     ;
+; -29.257 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.310     ;
+; -29.224 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.277     ;
+; -29.219 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.272     ;
+; -29.186 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.239     ;
+; -29.162 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.215     ;
+; -29.129 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.182     ;
+; -29.107 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.160     ;
+; -29.106 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.005     ; 49.141     ;
+; -29.084 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.137     ;
+; -29.058 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 49.119     ;
+; -29.055 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 49.109     ;
+; -29.035 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 49.096     ;
+; -29.010 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.063     ;
+; -29.006 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.022      ; 49.068     ;
+; -29.005 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.058     ;
+; -28.977 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.030     ;
+; -28.967 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.013      ; 49.020     ;
+; -28.956 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 49.017     ;
+; -28.938 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.991     ;
+; -28.919 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.005     ; 48.954     ;
+; -28.918 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.979     ;
+; -28.915 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.968     ;
+; -28.910 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.963     ;
+; -28.886 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.014      ; 48.940     ;
+; -28.861 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.922     ;
+; -28.850 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.903     ;
+; -28.836 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.889     ;
+; -28.827 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.880     ;
+; -28.823 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.876     ;
+; -28.798 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.014      ; 48.852     ;
+; -28.798 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.851     ;
+; -28.790 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.843     ;
+; -28.783 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.844     ;
+; -28.760 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.821     ;
+; -28.758 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.811     ;
+; -28.749 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.805     ;
+; -28.748 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.801     ;
+; -28.741 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.794     ;
+; -28.731 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.022      ; 48.793     ;
+; -28.726 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.782     ;
+; -28.710 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.763     ;
+; -28.709 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.770     ;
+; -28.697 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.017      ; 48.754     ;
+; -28.681 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.742     ;
+; -28.665 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.718     ;
+; -28.653 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.706     ;
+; -28.647 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.703     ;
+; -28.643 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.704     ;
+; -28.642 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.695     ;
+; -28.613 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.014      ; 48.667     ;
+; -28.609 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.665     ;
+; -28.589 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.642     ;
+; -28.586 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.647     ;
+; -28.571 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.624     ;
+; -28.563 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.616     ;
+; -28.552 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.608     ;
+; -28.525 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.578     ;
+; -28.522 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.583     ;
+; -28.501 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.554     ;
+; -28.484 ; Quad:leftMotorEncoder|spd_sum[7]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.004     ; 48.520     ;
+; -28.481 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[4]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.534     ;
+; -28.468 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.521     ;
+; -28.458 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[4]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.511     ;
+; -28.434 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.495     ;
+; -28.429 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[4]   ; clk          ; clk         ; 20.000       ; 0.014      ; 48.483     ;
+; -28.402 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.013      ; 48.455     ;
+; -28.400 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.456     ;
+; -28.388 ; Quad:leftMotorEncoder|spd_sum[7]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 48.442     ;
+; -28.379 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[4]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.432     ;
+; -28.355 ; Quad:leftMotorEncoder|spd_sum[7]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 48.409     ;
+; -28.341 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[4]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.394     ;
+; -28.316 ; Quad:leftMotorEncoder|spd_sum[5]  ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.369     ;
+; -28.314 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.367     ;
+; -28.305 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[2]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.361     ;
+; -28.284 ; Quad:leftMotorEncoder|spd_sum[1]  ; Quad:leftMotorEncoder|spd[4]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.337     ;
+; -28.282 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[2]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.338     ;
+; -28.268 ; Quad:rightMotorEncoder|spd_sum[4] ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.024     ; 48.284     ;
+; -28.253 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[2]   ; clk          ; clk         ; 20.000       ; 0.017      ; 48.310     ;
+; -28.247 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 48.308     ;
+; -28.235 ; Quad:rightMotorEncoder|spd_sum[4] ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.025     ; 48.250     ;
+; -28.231 ; Quad:leftMotorEncoder|spd_sum[2]  ; Quad:leftMotorEncoder|spd[3]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.284     ;
+; -28.224 ; Quad:rightMotorEncoder|spd_sum[5] ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.024     ; 48.240     ;
+; -28.213 ; Quad:leftMotorEncoder|spd_sum[4]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.269     ;
+; -28.208 ; Quad:leftMotorEncoder|spd_sum[0]  ; Quad:leftMotorEncoder|spd[3]   ; clk          ; clk         ; 20.000       ; 0.013      ; 48.261     ;
+; -28.203 ; Quad:leftMotorEncoder|spd_sum[6]  ; Quad:leftMotorEncoder|spd[2]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.259     ;
+; -28.191 ; Quad:rightMotorEncoder|spd_sum[5] ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.025     ; 48.206     ;
+; -28.179 ; Quad:leftMotorEncoder|spd_sum[15] ; Quad:leftMotorEncoder|spd[3]   ; clk          ; clk         ; 20.000       ; 0.014      ; 48.233     ;
+; -28.165 ; Quad:leftMotorEncoder|spd_sum[3]  ; Quad:leftMotorEncoder|spd[2]   ; clk          ; clk         ; 20.000       ; 0.016      ; 48.221     ;
++---------+-----------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                          ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; Quad:leftMotorEncoder|timer[0]          ; Quad:leftMotorEncoder|timer[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; Quad:leftMotorEncoder|cnt[23]           ; Quad:leftMotorEncoder|cnt[23]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; Quad:rightWheelEncoder|cnt[23]          ; Quad:rightWheelEncoder|cnt[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; Quad:leftWheelEncoder|cnt[23]           ; Quad:leftWheelEncoder|cnt[23]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; Quad:rightMotorEncoder|cnt[23]          ; Quad:rightMotorEncoder|cnt[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.741 ; Quad:rightMotorEncoder|spd_array[6][14] ; Quad:rightMotorEncoder|spd_array[7][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.047      ;
+; 0.742 ; Quad:leftMotorEncoder|spd_array[0][11]  ; Quad:leftMotorEncoder|spd_array[1][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.742 ; Quad:rightWheelEncoder|spd_array[3][10] ; Quad:rightWheelEncoder|spd_array[4][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.742 ; Quad:rightWheelEncoder|spd_array[5][9]  ; Quad:rightWheelEncoder|spd_array[6][9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.742 ; Quad:rightWheelEncoder|spd_array[7][5]  ; Quad:rightWheelEncoder|spd_array[8][5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.048      ;
+; 0.743 ; Quad:leftMotorEncoder|spd_array[3][4]   ; Quad:leftMotorEncoder|spd_array[4][4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.743 ; Quad:leftWheelEncoder|spd_array[1][5]   ; Quad:leftWheelEncoder|spd_array[2][5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.743 ; Quad:leftWheelEncoder|spd_array[3][12]  ; Quad:leftWheelEncoder|spd_array[4][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.743 ; Quad:leftWheelEncoder|spd_array[8][13]  ; Quad:leftWheelEncoder|spd_array[9][13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.743 ; Quad:rightWheelEncoder|spd_array[4][14] ; Quad:rightWheelEncoder|spd_array[5][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.743 ; Quad:leftWheelEncoder|spd_array[6][14]  ; Quad:leftWheelEncoder|spd_array[7][14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.049      ;
+; 0.744 ; Quad:leftMotorEncoder|spd_array[0][14]  ; Quad:leftMotorEncoder|spd_array[1][14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.744 ; Quad:leftWheelEncoder|spd_array[0][5]   ; Quad:leftWheelEncoder|spd_array[1][5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.744 ; Quad:leftWheelEncoder|spd_array[4][8]   ; Quad:leftWheelEncoder|spd_array[5][8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.050      ;
+; 0.745 ; Quad:leftMotorEncoder|spd_array[2][11]  ; Quad:leftMotorEncoder|spd_array[3][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.051      ;
+; 0.747 ; Quad:rightMotorEncoder|spd_array[4][10] ; Quad:rightMotorEncoder|spd_array[5][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.747 ; Quad:rightWheelEncoder|spd_array[6][1]  ; Quad:rightWheelEncoder|spd_array[7][1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.747 ; Quad:rightWheelEncoder|spd_array[2][13] ; Quad:rightWheelEncoder|spd_array[3][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.053      ;
+; 0.748 ; Quad:leftMotorEncoder|spd_array[3][11]  ; Quad:leftMotorEncoder|spd_array[4][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.748 ; Quad:rightWheelEncoder|spd_array[2][11] ; Quad:rightWheelEncoder|spd_array[3][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.749 ; Quad:rightMotorEncoder|spd_array[3][6]  ; Quad:rightMotorEncoder|spd_array[4][6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.749 ; Quad:leftWheelEncoder|spd_array[6][9]   ; Quad:leftWheelEncoder|spd_array[7][9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.750 ; Quad:leftMotorEncoder|spd_array[0][6]   ; Quad:leftMotorEncoder|spd_array[1][6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
+; 0.750 ; Quad:rightMotorEncoder|spd_array[3][10] ; Quad:rightMotorEncoder|spd_array[4][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
+; 0.750 ; Quad:rightMotorEncoder|spd_array[2][13] ; Quad:rightMotorEncoder|spd_array[3][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.056      ;
+; 0.751 ; Quad:rightWheelEncoder|spd_array[2][10] ; Quad:rightWheelEncoder|spd_array[3][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.057      ;
+; 0.752 ; Quad:rightMotorEncoder|spd_array[3][12] ; Quad:rightMotorEncoder|spd_array[4][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.058      ;
+; 0.753 ; Quad:leftWheelEncoder|spd_array[6][3]   ; Quad:leftWheelEncoder|spd_array[7][3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.059      ;
+; 0.754 ; Quad:rightWheelEncoder|spd_array[2][12] ; Quad:rightWheelEncoder|spd_array[3][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.754 ; Quad:rightWheelEncoder|spd_array[3][13] ; Quad:rightWheelEncoder|spd_array[4][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.060      ;
+; 0.755 ; Quad:leftMotorEncoder|spd_array[0][7]   ; Quad:leftMotorEncoder|spd_array[1][7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.755 ; Quad:leftMotorEncoder|spd_array[0][12]  ; Quad:leftMotorEncoder|spd_array[1][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.756 ; Quad:leftMotorEncoder|spd_array[1][7]   ; Quad:leftMotorEncoder|spd_array[2][7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.759 ; Quad:rightWheelEncoder|spd_array[1][12] ; Quad:rightWheelEncoder|spd_array[2][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.768 ; Quad:rightWheelEncoder|Br[0]            ; Quad:rightWheelEncoder|Br[1]            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.074      ;
+; 0.775 ; Quad:leftMotorEncoder|Ar[0]             ; Quad:leftMotorEncoder|Ar[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.776 ; Quad:rightMotorEncoder|Br[0]            ; Quad:rightMotorEncoder|Br[1]            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.776 ; Quad:rightMotorEncoder|Ar[0]            ; Quad:rightMotorEncoder|Ar[1]            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.898 ; Quad:rightWheelEncoder|spd_array[5][14] ; Quad:rightWheelEncoder|spd_array[6][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.204      ;
+; 0.899 ; Quad:rightWheelEncoder|spd_array[1][1]  ; Quad:rightWheelEncoder|spd_array[2][1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 0.899 ; Quad:rightWheelEncoder|spd_array[2][4]  ; Quad:rightWheelEncoder|spd_array[3][4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 0.899 ; Quad:rightWheelEncoder|spd_array[3][12] ; Quad:rightWheelEncoder|spd_array[4][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
+; 0.901 ; Quad:leftMotorEncoder|spd_array[8][2]   ; Quad:leftMotorEncoder|spd_array[9][2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.207      ;
+; 0.901 ; Quad:rightMotorEncoder|spd_array[1][7]  ; Quad:rightMotorEncoder|spd_array[2][7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.207      ;
+; 0.901 ; Quad:rightMotorEncoder|spd_array[7][14] ; Quad:rightMotorEncoder|spd_array[8][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.207      ;
+; 0.901 ; Quad:rightWheelEncoder|spd_array[1][7]  ; Quad:rightWheelEncoder|spd_array[2][7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.207      ;
+; 0.901 ; Quad:rightWheelEncoder|spd_array[4][9]  ; Quad:rightWheelEncoder|spd_array[5][9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.207      ;
+; 0.901 ; Quad:leftWheelEncoder|spd_array[4][12]  ; Quad:leftWheelEncoder|spd_array[5][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.207      ;
+; 0.902 ; Quad:leftWheelEncoder|spd_array[7][8]   ; Quad:leftWheelEncoder|spd_array[8][8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.208      ;
+; 0.903 ; Quad:rightWheelEncoder|spd_array[5][11] ; Quad:rightWheelEncoder|spd_array[6][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 0.903 ; Quad:leftWheelEncoder|spd_array[5][12]  ; Quad:leftWheelEncoder|spd_array[6][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.209      ;
+; 0.904 ; Quad:leftMotorEncoder|spd_array[5][1]   ; Quad:leftMotorEncoder|spd_array[6][1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.210      ;
+; 0.904 ; Quad:rightMotorEncoder|spd_array[2][12] ; Quad:rightMotorEncoder|spd_array[3][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.210      ;
+; 0.904 ; Quad:leftWheelEncoder|spd_array[2][10]  ; Quad:leftWheelEncoder|spd_array[3][10]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.210      ;
+; 0.904 ; Quad:leftWheelEncoder|spd_array[7][10]  ; Quad:leftWheelEncoder|spd_array[8][10]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.210      ;
+; 0.905 ; Quad:rightWheelEncoder|spd_array[1][11] ; Quad:rightWheelEncoder|spd_array[2][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.211      ;
+; 0.905 ; Quad:rightWheelEncoder|spd_array[7][1]  ; Quad:rightWheelEncoder|spd_array[8][1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.211      ;
+; 0.905 ; Quad:leftWheelEncoder|spd_array[8][11]  ; Quad:leftWheelEncoder|spd_array[9][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.211      ;
+; 0.906 ; Quad:leftMotorEncoder|spd_array[2][2]   ; Quad:leftMotorEncoder|spd_array[3][2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 0.906 ; Quad:rightMotorEncoder|spd_array[3][13] ; Quad:rightMotorEncoder|spd_array[4][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 0.906 ; Quad:rightWheelEncoder|spd_array[6][7]  ; Quad:rightWheelEncoder|spd_array[7][7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 0.906 ; Quad:leftWheelEncoder|spd_array[4][5]   ; Quad:leftWheelEncoder|spd_array[5][5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.212      ;
+; 0.907 ; Quad:rightMotorEncoder|spd_array[2][3]  ; Quad:rightMotorEncoder|spd_array[3][3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.213      ;
+; 0.908 ; Quad:rightMotorEncoder|spd_array[3][5]  ; Quad:rightMotorEncoder|spd_array[4][5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.214      ;
+; 0.908 ; Quad:rightMotorEncoder|spd_array[1][8]  ; Quad:rightMotorEncoder|spd_array[2][8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.214      ;
+; 0.908 ; Quad:rightWheelEncoder|spd_array[2][5]  ; Quad:rightWheelEncoder|spd_array[3][5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.214      ;
+; 0.909 ; Quad:rightWheelEncoder|spd_array[3][11] ; Quad:rightWheelEncoder|spd_array[4][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.215      ;
+; 0.909 ; Quad:leftWheelEncoder|spd_array[3][9]   ; Quad:leftWheelEncoder|spd_array[4][9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.215      ;
+; 0.910 ; Quad:leftMotorEncoder|spd_array[1][6]   ; Quad:leftMotorEncoder|spd_array[2][6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.216      ;
+; 0.911 ; Quad:leftMotorEncoder|spd_array[7][7]   ; Quad:leftMotorEncoder|spd_array[8][7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.217      ;
+; 0.911 ; Quad:leftMotorEncoder|spd_array[1][12]  ; Quad:leftMotorEncoder|spd_array[2][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.217      ;
+; 0.911 ; Quad:rightWheelEncoder|spd_array[2][0]  ; Quad:rightWheelEncoder|spd_array[3][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.217      ;
+; 0.913 ; Quad:leftMotorEncoder|spd_array[1][10]  ; Quad:leftMotorEncoder|spd_array[2][10]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.219      ;
+; 0.914 ; Quad:leftMotorEncoder|spd_array[1][9]   ; Quad:leftMotorEncoder|spd_array[2][9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.220      ;
+; 0.914 ; Quad:leftMotorEncoder|spd_array[1][14]  ; Quad:leftMotorEncoder|spd_array[2][14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.220      ;
+; 0.966 ; Quad:leftMotorEncoder|spd_array[5][7]   ; Quad:leftMotorEncoder|spd_array[6][7]   ; clk          ; clk         ; 0.000        ; 0.002      ; 1.274      ;
+; 0.966 ; Quad:rightWheelEncoder|spd_array[4][1]  ; Quad:rightWheelEncoder|spd_array[5][1]  ; clk          ; clk         ; 0.000        ; 0.001      ; 1.273      ;
+; 0.974 ; Quad:leftMotorEncoder|timer[1]          ; Quad:leftMotorEncoder|timer[7]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.280      ;
+; 0.976 ; Quad:leftMotorEncoder|timer[1]          ; Quad:leftMotorEncoder|timer[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.282      ;
+; 0.977 ; Quad:leftWheelEncoder|spd_array[1][11]  ; Quad:leftWheelEncoder|spd_array[2][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.283      ;
+; 0.980 ; Quad:rightMotorEncoder|spd_array[3][3]  ; Quad:rightMotorEncoder|spd_array[4][3]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.285      ;
+; 1.041 ; Quad:leftMotorEncoder|spd_array[5][8]   ; Quad:leftMotorEncoder|spd_array[6][8]   ; clk          ; clk         ; 0.000        ; 0.002      ; 1.349      ;
+; 1.045 ; Quad:rightMotorEncoder|spd_array[2][10] ; Quad:rightMotorEncoder|spd_array[3][10] ; clk          ; clk         ; 0.000        ; -0.001     ; 1.350      ;
+; 1.046 ; Quad:rightMotorEncoder|spd_array[5][11] ; Quad:rightMotorEncoder|spd_array[6][11] ; clk          ; clk         ; 0.000        ; 0.001      ; 1.353      ;
+; 1.050 ; Quad:rightMotorEncoder|spd_array[5][8]  ; Quad:rightMotorEncoder|spd_array[6][8]  ; clk          ; clk         ; 0.000        ; 0.001      ; 1.357      ;
+; 1.050 ; Quad:leftWheelEncoder|spd_array[1][9]   ; Quad:leftWheelEncoder|spd_array[2][9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.356      ;
+; 1.051 ; Quad:leftMotorEncoder|spd_array[5][4]   ; Quad:leftMotorEncoder|spd_array[6][4]   ; clk          ; clk         ; 0.000        ; 0.002      ; 1.359      ;
+; 1.051 ; Quad:leftMotorEncoder|spd_array[5][5]   ; Quad:leftMotorEncoder|spd_array[6][5]   ; clk          ; clk         ; 0.000        ; 0.002      ; 1.359      ;
+; 1.051 ; Quad:leftMotorEncoder|spd_array[5][11]  ; Quad:leftMotorEncoder|spd_array[6][11]  ; clk          ; clk         ; 0.000        ; 0.002      ; 1.359      ;
+; 1.052 ; Quad:leftMotorEncoder|spd_array[4][1]   ; Quad:leftMotorEncoder|spd_array[5][1]   ; clk          ; clk         ; 0.000        ; 0.002      ; 1.360      ;
+; 1.052 ; Quad:rightWheelEncoder|spd_array[0][1]  ; Quad:rightWheelEncoder|spd_array[1][1]  ; clk          ; clk         ; 0.000        ; -0.001     ; 1.357      ;
+; 1.052 ; Quad:rightWheelEncoder|spd_array[5][4]  ; Quad:rightWheelEncoder|spd_array[6][4]  ; clk          ; clk         ; 0.000        ; 0.001      ; 1.359      ;
+; 1.052 ; Quad:leftWheelEncoder|spd_array[5][0]   ; Quad:leftWheelEncoder|spd_array[6][0]   ; clk          ; clk         ; 0.000        ; -0.003     ; 1.355      ;
+; 1.053 ; Quad:leftMotorEncoder|spd_array[0][5]   ; Quad:leftMotorEncoder|spd_array[1][5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.359      ;
+; 1.053 ; Quad:leftMotorEncoder|spd_array[5][6]   ; Quad:leftMotorEncoder|spd_array[6][6]   ; clk          ; clk         ; 0.000        ; 0.002      ; 1.361      ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                             ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                            ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[0]       ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[0]       ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[1]       ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[1]       ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[0]       ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[0]       ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[1]       ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[1]       ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[0]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[0]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[10]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[10]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[11]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[11]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[12]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[12]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[13]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[13]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[14]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[14]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[15]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[15]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[16]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[16]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[17]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[17]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[18]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[18]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[19]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[19]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[1]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[1]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[20]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[20]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[21]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[21]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[22]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[22]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[23]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[23]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[2]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[2]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[3]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[3]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[4]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[4]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[5]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[5]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[6]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[6]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[7]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[7]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[8]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[8]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[9]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[9]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[0]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[0]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[10] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[10] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[11] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[11] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[12] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[12] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[13] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[13] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[14] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[14] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[1]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[1]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[2]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[2]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[3]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[3]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[4]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[4]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[5]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[5]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[6]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[6]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[7]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[7]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[8]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[8]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[9]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[9]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[0]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[0]      ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[10]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[10]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[11]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[11]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[12]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[12]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[13]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[13]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[14]     ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[14]     ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[1]      ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[1]      ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ch1A      ; clk        ; 3.744 ; 3.744 ; Rise       ; clk             ;
+; ch1B      ; clk        ; 4.834 ; 4.834 ; Rise       ; clk             ;
+; ch2A      ; clk        ; 5.225 ; 5.225 ; Rise       ; clk             ;
+; ch2B      ; clk        ; 5.168 ; 5.168 ; Rise       ; clk             ;
+; ch3A      ; clk        ; 5.389 ; 5.389 ; Rise       ; clk             ;
+; ch3B      ; clk        ; 4.950 ; 4.950 ; Rise       ; clk             ;
+; ch4A      ; clk        ; 6.326 ; 6.326 ; Rise       ; clk             ;
+; ch4B      ; clk        ; 5.664 ; 5.664 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ch1A      ; clk        ; -3.478 ; -3.478 ; Rise       ; clk             ;
+; ch1B      ; clk        ; -4.568 ; -4.568 ; Rise       ; clk             ;
+; ch2A      ; clk        ; -4.959 ; -4.959 ; Rise       ; clk             ;
+; ch2B      ; clk        ; -4.902 ; -4.902 ; Rise       ; clk             ;
+; ch3A      ; clk        ; -5.123 ; -5.123 ; Rise       ; clk             ;
+; ch3B      ; clk        ; -4.684 ; -4.684 ; Rise       ; clk             ;
+; ch4A      ; clk        ; -6.060 ; -6.060 ; Rise       ; clk             ;
+; ch4B      ; clk        ; -5.398 ; -5.398 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; count_out[*]   ; clk        ; 14.393 ; 14.393 ; Rise       ; clk             ;
+;  count_out[0]  ; clk        ; 13.913 ; 13.913 ; Rise       ; clk             ;
+;  count_out[1]  ; clk        ; 12.994 ; 12.994 ; Rise       ; clk             ;
+;  count_out[2]  ; clk        ; 13.864 ; 13.864 ; Rise       ; clk             ;
+;  count_out[3]  ; clk        ; 13.914 ; 13.914 ; Rise       ; clk             ;
+;  count_out[4]  ; clk        ; 13.585 ; 13.585 ; Rise       ; clk             ;
+;  count_out[5]  ; clk        ; 13.117 ; 13.117 ; Rise       ; clk             ;
+;  count_out[6]  ; clk        ; 13.386 ; 13.386 ; Rise       ; clk             ;
+;  count_out[7]  ; clk        ; 14.393 ; 14.393 ; Rise       ; clk             ;
+;  count_out[8]  ; clk        ; 12.144 ; 12.144 ; Rise       ; clk             ;
+;  count_out[9]  ; clk        ; 13.549 ; 13.549 ; Rise       ; clk             ;
+;  count_out[10] ; clk        ; 13.828 ; 13.828 ; Rise       ; clk             ;
+;  count_out[11] ; clk        ; 13.363 ; 13.363 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; count_out[*]   ; clk        ; 9.137  ; 9.137  ; Rise       ; clk             ;
+;  count_out[0]  ; clk        ; 9.970  ; 9.970  ; Rise       ; clk             ;
+;  count_out[1]  ; clk        ; 10.270 ; 10.270 ; Rise       ; clk             ;
+;  count_out[2]  ; clk        ; 9.863  ; 9.863  ; Rise       ; clk             ;
+;  count_out[3]  ; clk        ; 11.157 ; 11.157 ; Rise       ; clk             ;
+;  count_out[4]  ; clk        ; 9.311  ; 9.311  ; Rise       ; clk             ;
+;  count_out[5]  ; clk        ; 10.435 ; 10.435 ; Rise       ; clk             ;
+;  count_out[6]  ; clk        ; 9.773  ; 9.773  ; Rise       ; clk             ;
+;  count_out[7]  ; clk        ; 11.137 ; 11.137 ; Rise       ; clk             ;
+;  count_out[8]  ; clk        ; 9.137  ; 9.137  ; Rise       ; clk             ;
+;  count_out[9]  ; clk        ; 9.764  ; 9.764  ; Rise       ; clk             ;
+;  count_out[10] ; clk        ; 9.771  ; 9.771  ; Rise       ; clk             ;
+;  count_out[11] ; clk        ; 10.507 ; 10.507 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------+
+; Propagation Delay                                              ;
++------------+---------------+--------+--------+--------+--------+
+; Input Port ; Output Port   ; RR     ; RF     ; FR     ; FF     ;
++------------+---------------+--------+--------+--------+--------+
+; ch4A       ; led1          ; 10.269 ;        ;        ; 10.269 ;
+; ch4B       ; led2          ; 10.281 ;        ;        ; 10.281 ;
+; sel[0]     ; count_out[0]  ; 11.526 ; 11.526 ; 11.526 ; 11.526 ;
+; sel[0]     ; count_out[1]  ; 11.265 ; 11.265 ; 11.265 ; 11.265 ;
+; sel[0]     ; count_out[2]  ; 11.606 ; 11.606 ; 11.606 ; 11.606 ;
+; sel[0]     ; count_out[3]  ; 9.929  ; 9.929  ; 9.929  ; 9.929  ;
+; sel[0]     ; count_out[4]  ; 9.361  ; 9.361  ; 9.361  ; 9.361  ;
+; sel[0]     ; count_out[5]  ; 8.978  ; 8.978  ; 8.978  ; 8.978  ;
+; sel[0]     ; count_out[6]  ; 8.921  ; 8.921  ; 8.921  ; 8.921  ;
+; sel[0]     ; count_out[7]  ; 10.108 ; 10.108 ; 10.108 ; 10.108 ;
+; sel[0]     ; count_out[8]  ; 8.499  ; 8.499  ; 8.499  ; 8.499  ;
+; sel[0]     ; count_out[9]  ; 9.455  ; 9.455  ; 9.455  ; 9.455  ;
+; sel[0]     ; count_out[10] ; 9.294  ; 9.294  ; 9.294  ; 9.294  ;
+; sel[0]     ; count_out[11] ; 11.449 ; 11.449 ; 11.449 ; 11.449 ;
+; sel[1]     ; count_out[0]  ; 10.072 ; 10.072 ; 10.072 ; 10.072 ;
+; sel[1]     ; count_out[1]  ; 9.094  ; 9.094  ; 9.094  ; 9.094  ;
+; sel[1]     ; count_out[2]  ; 9.572  ; 9.572  ; 9.572  ; 9.572  ;
+; sel[1]     ; count_out[3]  ; 11.958 ; 11.958 ; 11.958 ; 11.958 ;
+; sel[1]     ; count_out[4]  ; 11.990 ; 11.990 ; 11.990 ; 11.990 ;
+; sel[1]     ; count_out[5]  ; 11.774 ; 11.774 ; 11.774 ; 11.774 ;
+; sel[1]     ; count_out[6]  ; 11.668 ; 11.668 ; 11.668 ; 11.668 ;
+; sel[1]     ; count_out[7]  ; 12.895 ; 12.895 ; 12.895 ; 12.895 ;
+; sel[1]     ; count_out[8]  ; 10.517 ; 10.517 ; 10.517 ; 10.517 ;
+; sel[1]     ; count_out[9]  ; 11.146 ; 11.146 ; 11.146 ; 11.146 ;
+; sel[1]     ; count_out[10] ; 12.015 ; 12.015 ; 12.015 ; 12.015 ;
+; sel[1]     ; count_out[11] ; 9.722  ; 9.722  ; 9.722  ; 9.722  ;
+; sel[2]     ; count_out[0]  ; 10.382 ; 10.382 ; 10.382 ; 10.382 ;
+; sel[2]     ; count_out[1]  ; 9.472  ; 9.472  ; 9.472  ; 9.472  ;
+; sel[2]     ; count_out[2]  ; 9.871  ; 9.871  ; 9.871  ; 9.871  ;
+; sel[2]     ; count_out[3]  ; 12.121 ; 12.121 ; 12.121 ; 12.121 ;
+; sel[2]     ; count_out[4]  ; 11.602 ; 11.602 ; 11.602 ; 11.602 ;
+; sel[2]     ; count_out[5]  ; 10.949 ; 10.949 ; 10.949 ; 10.949 ;
+; sel[2]     ; count_out[6]  ; 11.269 ; 11.269 ; 11.269 ; 11.269 ;
+; sel[2]     ; count_out[7]  ; 12.796 ; 12.796 ; 12.796 ; 12.796 ;
+; sel[2]     ; count_out[8]  ; 10.755 ; 10.755 ; 10.755 ; 10.755 ;
+; sel[2]     ; count_out[9]  ; 11.301 ; 11.301 ; 11.301 ; 11.301 ;
+; sel[2]     ; count_out[10] ; 12.425 ; 12.425 ; 12.425 ; 12.425 ;
+; sel[2]     ; count_out[11] ; 9.892  ; 9.892  ; 9.892  ; 9.892  ;
+; sel[3]     ; count_out[0]  ; 12.020 ; 12.020 ; 12.020 ; 12.020 ;
+; sel[3]     ; count_out[1]  ; 11.696 ; 11.696 ; 11.696 ; 11.696 ;
+; sel[3]     ; count_out[2]  ; 11.998 ; 11.998 ; 11.998 ; 11.998 ;
+; sel[3]     ; count_out[3]  ; 10.041 ; 10.041 ; 10.041 ; 10.041 ;
+; sel[3]     ; count_out[4]  ; 10.526 ; 10.526 ; 10.526 ; 10.526 ;
+; sel[3]     ; count_out[5]  ; 9.195  ; 9.195  ; 9.195  ; 9.195  ;
+; sel[3]     ; count_out[6]  ; 9.139  ; 9.139  ; 9.139  ; 9.139  ;
+; sel[3]     ; count_out[7]  ; 11.151 ; 11.151 ; 11.151 ; 11.151 ;
+; sel[3]     ; count_out[8]  ; 9.193  ; 9.193  ; 9.193  ; 9.193  ;
+; sel[3]     ; count_out[9]  ; 9.490  ; 9.490  ; 9.490  ; 9.490  ;
+; sel[3]     ; count_out[10] ; 10.325 ; 10.325 ; 10.325 ; 10.325 ;
+; sel[3]     ; count_out[11] ; 11.804 ; 11.804 ; 11.804 ; 11.804 ;
++------------+---------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------------+
+; Minimum Propagation Delay                                      ;
++------------+---------------+--------+--------+--------+--------+
+; Input Port ; Output Port   ; RR     ; RF     ; FR     ; FF     ;
++------------+---------------+--------+--------+--------+--------+
+; ch4A       ; led1          ; 10.269 ;        ;        ; 10.269 ;
+; ch4B       ; led2          ; 10.281 ;        ;        ; 10.281 ;
+; sel[0]     ; count_out[0]  ; 10.358 ; 10.358 ; 10.358 ; 10.358 ;
+; sel[0]     ; count_out[1]  ; 9.917  ; 9.917  ; 9.917  ; 9.917  ;
+; sel[0]     ; count_out[2]  ; 10.018 ; 10.018 ; 10.018 ; 10.018 ;
+; sel[0]     ; count_out[3]  ; 8.457  ; 8.457  ; 8.457  ; 8.457  ;
+; sel[0]     ; count_out[4]  ; 9.361  ; 9.361  ; 9.361  ; 9.361  ;
+; sel[0]     ; count_out[5]  ; 8.429  ; 8.429  ; 8.429  ; 8.429  ;
+; sel[0]     ; count_out[6]  ; 8.921  ; 8.921  ; 8.921  ; 8.921  ;
+; sel[0]     ; count_out[7]  ; 8.677  ; 8.677  ; 8.677  ; 8.677  ;
+; sel[0]     ; count_out[8]  ; 8.499  ; 8.499  ; 8.499  ; 8.499  ;
+; sel[0]     ; count_out[9]  ; 8.468  ; 8.468  ; 8.468  ; 8.468  ;
+; sel[0]     ; count_out[10] ; 9.294  ; 9.294  ; 9.294  ; 9.294  ;
+; sel[0]     ; count_out[11] ; 9.962  ; 9.962  ; 9.962  ; 9.962  ;
+; sel[1]     ; count_out[0]  ; 9.627  ; 9.627  ; 9.627  ; 9.627  ;
+; sel[1]     ; count_out[1]  ; 9.094  ; 9.094  ; 9.094  ; 9.094  ;
+; sel[1]     ; count_out[2]  ; 9.316  ; 9.316  ; 9.316  ; 9.316  ;
+; sel[1]     ; count_out[3]  ; 10.745 ; 10.745 ; 10.745 ; 10.745 ;
+; sel[1]     ; count_out[4]  ; 9.641  ; 9.641  ; 9.641  ; 9.641  ;
+; sel[1]     ; count_out[5]  ; 9.706  ; 9.706  ; 9.706  ; 9.706  ;
+; sel[1]     ; count_out[6]  ; 10.026 ; 10.026 ; 10.026 ; 10.026 ;
+; sel[1]     ; count_out[7]  ; 9.609  ; 9.609  ; 9.609  ; 9.609  ;
+; sel[1]     ; count_out[8]  ; 8.856  ; 8.856  ; 8.856  ; 8.856  ;
+; sel[1]     ; count_out[9]  ; 9.585  ; 9.585  ; 9.585  ; 9.585  ;
+; sel[1]     ; count_out[10] ; 9.981  ; 9.981  ; 9.981  ; 9.981  ;
+; sel[1]     ; count_out[11] ; 9.722  ; 9.722  ; 9.722  ; 9.722  ;
+; sel[2]     ; count_out[0]  ; 10.382 ; 10.382 ; 10.382 ; 10.382 ;
+; sel[2]     ; count_out[1]  ; 8.939  ; 8.939  ; 8.939  ; 8.939  ;
+; sel[2]     ; count_out[2]  ; 9.871  ; 9.871  ; 9.871  ; 9.871  ;
+; sel[2]     ; count_out[3]  ; 9.494  ; 9.494  ; 9.494  ; 9.494  ;
+; sel[2]     ; count_out[4]  ; 10.637 ; 10.637 ; 10.637 ; 10.637 ;
+; sel[2]     ; count_out[5]  ; 10.210 ; 10.210 ; 10.210 ; 10.210 ;
+; sel[2]     ; count_out[6]  ; 10.086 ; 10.086 ; 10.086 ; 10.086 ;
+; sel[2]     ; count_out[7]  ; 11.316 ; 11.316 ; 11.316 ; 11.316 ;
+; sel[2]     ; count_out[8]  ; 9.255  ; 9.255  ; 9.255  ; 9.255  ;
+; sel[2]     ; count_out[9]  ; 9.858  ; 9.858  ; 9.858  ; 9.858  ;
+; sel[2]     ; count_out[10] ; 11.213 ; 11.213 ; 11.213 ; 11.213 ;
+; sel[2]     ; count_out[11] ; 8.633  ; 8.633  ; 8.633  ; 8.633  ;
+; sel[3]     ; count_out[0]  ; 10.647 ; 10.647 ; 10.647 ; 10.647 ;
+; sel[3]     ; count_out[1]  ; 10.078 ; 10.078 ; 10.078 ; 10.078 ;
+; sel[3]     ; count_out[2]  ; 10.039 ; 10.039 ; 10.039 ; 10.039 ;
+; sel[3]     ; count_out[3]  ; 10.041 ; 10.041 ; 10.041 ; 10.041 ;
+; sel[3]     ; count_out[4]  ; 9.778  ; 9.778  ; 9.778  ; 9.778  ;
+; sel[3]     ; count_out[5]  ; 9.195  ; 9.195  ; 9.195  ; 9.195  ;
+; sel[3]     ; count_out[6]  ; 8.692  ; 8.692  ; 8.692  ; 8.692  ;
+; sel[3]     ; count_out[7]  ; 11.151 ; 11.151 ; 11.151 ; 11.151 ;
+; sel[3]     ; count_out[8]  ; 8.037  ; 8.037  ; 8.037  ; 8.037  ;
+; sel[3]     ; count_out[9]  ; 9.490  ; 9.490  ; 9.490  ; 9.490  ;
+; sel[3]     ; count_out[10] ; 9.338  ; 9.338  ; 9.338  ; 9.338  ;
+; sel[3]     ; count_out[11] ; 9.202  ; 9.202  ; 9.202  ; 9.202  ;
++------------+---------------+--------+--------+--------+--------+
+
+
++-------------------------------+
+; Fast Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 4.652 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 9.000 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                           ;
++-------+------------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                          ; To Node                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+; 4.652 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.001     ; 15.379     ;
+; 4.664 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.382     ;
+; 4.665 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.001     ; 15.366     ;
+; 4.676 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.370     ;
+; 4.677 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.369     ;
+; 4.689 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.357     ;
+; 4.706 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; 0.000      ; 15.326     ;
+; 4.718 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.015      ; 15.329     ;
+; 4.727 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.001     ; 15.304     ;
+; 4.730 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.015      ; 15.317     ;
+; 4.735 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.001     ; 15.296     ;
+; 4.739 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.307     ;
+; 4.744 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.001     ; 15.287     ;
+; 4.747 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.299     ;
+; 4.751 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.295     ;
+; 4.756 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.290     ;
+; 4.759 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.287     ;
+; 4.768 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.278     ;
+; 4.773 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.273     ;
+; 4.786 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.260     ;
+; 4.810 ; Quad:leftMotorEncoder|spd_sum[5]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.001     ; 15.221     ;
+; 4.822 ; Quad:leftMotorEncoder|spd_sum[5]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.224     ;
+; 4.827 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.015      ; 15.220     ;
+; 4.834 ; Quad:leftMotorEncoder|spd_sum[5]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.212     ;
+; 4.841 ; Quad:rightMotorEncoder|spd_sum[4]  ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.164     ;
+; 4.842 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.204     ;
+; 4.848 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.198     ;
+; 4.855 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.191     ;
+; 4.856 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.190     ;
+; 4.865 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.181     ;
+; 4.866 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.186     ;
+; 4.868 ; Quad:leftMotorEncoder|spd_sum[4]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; -0.001     ; 15.163     ;
+; 4.872 ; Quad:rightMotorEncoder|spd_sum[5]  ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.133     ;
+; 4.879 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.167     ;
+; 4.879 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.173     ;
+; 4.880 ; Quad:leftMotorEncoder|spd_sum[4]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.166     ;
+; 4.892 ; Quad:leftMotorEncoder|spd_sum[4]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.154     ;
+; 4.892 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.154     ;
+; 4.896 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.015      ; 15.151     ;
+; 4.915 ; Quad:rightMotorEncoder|spd_sum[2]  ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.090     ;
+; 4.917 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.129     ;
+; 4.920 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.015      ; 15.127     ;
+; 4.920 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.021      ; 15.133     ;
+; 4.925 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.121     ;
+; 4.931 ; Quad:leftMotorEncoder|spd_sum[5]   ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.115     ;
+; 4.933 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.015      ; 15.114     ;
+; 4.933 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.015      ; 15.114     ;
+; 4.934 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.112     ;
+; 4.936 ; Quad:rightMotorEncoder|spd_sum[4]  ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.028     ; 15.068     ;
+; 4.940 ; Quad:rightMotorEncoder|spd_sum[0]  ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.065     ;
+; 4.941 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.111     ;
+; 4.942 ; Quad:rightMotorEncoder|spd_sum[6]  ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.063     ;
+; 4.947 ; Quad:rightMotorEncoder|spd_sum[4]  ; Quad:rightMotorEncoder|spd[13] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.058     ;
+; 4.949 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.103     ;
+; 4.951 ; Quad:rightMotorEncoder|spd_sum[15] ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.026     ; 15.055     ;
+; 4.954 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.092     ;
+; 4.958 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.094     ;
+; 4.962 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.084     ;
+; 4.963 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.083     ;
+; 4.964 ; Quad:leftMotorEncoder|spd_sum[2]   ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.088     ;
+; 4.967 ; Quad:rightMotorEncoder|spd_sum[5]  ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.028     ; 15.037     ;
+; 4.971 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.075     ;
+; 4.972 ; Quad:rightMotorEncoder|spd_sum[4]  ; Quad:rightMotorEncoder|spd[9]  ; clk          ; clk         ; 20.000       ; -0.016     ; 15.044     ;
+; 4.974 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.016      ; 15.074     ;
+; 4.976 ; Quad:rightMotorEncoder|spd_sum[4]  ; Quad:rightMotorEncoder|spd[12] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.029     ;
+; 4.976 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.070     ;
+; 4.977 ; Quad:leftMotorEncoder|spd_sum[0]   ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.075     ;
+; 4.978 ; Quad:rightMotorEncoder|spd_sum[5]  ; Quad:rightMotorEncoder|spd[13] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.027     ;
+; 4.987 ; Quad:rightMotorEncoder|spd_sum[3]  ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.018     ;
+; 4.989 ; Quad:leftMotorEncoder|spd_sum[4]   ; Quad:leftMotorEncoder|spd[12]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.057     ;
+; 4.993 ; Quad:leftMotorEncoder|spd_sum[7]   ; Quad:leftMotorEncoder|spd[11]  ; clk          ; clk         ; 20.000       ; 0.000      ; 15.039     ;
+; 4.995 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.015      ; 15.052     ;
+; 5.000 ; Quad:leftMotorEncoder|spd_sum[5]   ; Quad:leftMotorEncoder|spd[10]  ; clk          ; clk         ; 20.000       ; 0.014      ; 15.046     ;
+; 5.001 ; Quad:rightMotorEncoder|spd_sum[1]  ; Quad:rightMotorEncoder|spd[14] ; clk          ; clk         ; 20.000       ; -0.027     ; 15.004     ;
+; 5.003 ; Quad:rightMotorEncoder|spd_sum[5]  ; Quad:rightMotorEncoder|spd[9]  ; clk          ; clk         ; 20.000       ; -0.016     ; 15.013     ;
+; 5.003 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.015      ; 15.044     ;
+; 5.005 ; Quad:leftMotorEncoder|spd_sum[7]   ; Quad:leftMotorEncoder|spd[13]  ; clk          ; clk         ; 20.000       ; 0.015      ; 15.042     ;
+; 5.007 ; Quad:rightMotorEncoder|spd_sum[5]  ; Quad:rightMotorEncoder|spd[12] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.998     ;
+; 5.010 ; Quad:rightMotorEncoder|spd_sum[2]  ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.028     ; 14.994     ;
+; 5.012 ; Quad:rightMotorEncoder|spd_sum[4]  ; Quad:rightMotorEncoder|spd[11] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.993     ;
+; 5.012 ; Quad:leftMotorEncoder|spd_sum[1]   ; Quad:leftMotorEncoder|spd[8]   ; clk          ; clk         ; 20.000       ; 0.015      ; 15.035     ;
+; 5.017 ; Quad:leftMotorEncoder|spd_sum[7]   ; Quad:leftMotorEncoder|spd[14]  ; clk          ; clk         ; 20.000       ; 0.015      ; 15.030     ;
+; 5.017 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.015      ; 15.030     ;
+; 5.018 ; Quad:leftMotorEncoder|spd_sum[15]  ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.021      ; 15.035     ;
+; 5.021 ; Quad:rightMotorEncoder|spd_sum[2]  ; Quad:rightMotorEncoder|spd[13] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.984     ;
+; 5.024 ; Quad:leftMotorEncoder|spd_sum[5]   ; Quad:leftMotorEncoder|spd[6]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.028     ;
+; 5.035 ; Quad:rightMotorEncoder|spd_sum[0]  ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.028     ; 14.969     ;
+; 5.037 ; Quad:rightMotorEncoder|spd_sum[6]  ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.028     ; 14.967     ;
+; 5.037 ; Quad:leftMotorEncoder|spd_sum[5]   ; Quad:leftMotorEncoder|spd[9]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.009     ;
+; 5.038 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.008     ;
+; 5.039 ; Quad:leftMotorEncoder|spd_sum[6]   ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.013     ;
+; 5.043 ; Quad:rightMotorEncoder|spd_sum[5]  ; Quad:rightMotorEncoder|spd[11] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.962     ;
+; 5.046 ; Quad:rightMotorEncoder|spd_sum[2]  ; Quad:rightMotorEncoder|spd[9]  ; clk          ; clk         ; 20.000       ; -0.016     ; 14.970     ;
+; 5.046 ; Quad:rightMotorEncoder|spd_sum[15] ; Quad:rightMotorEncoder|spd[8]  ; clk          ; clk         ; 20.000       ; -0.027     ; 14.959     ;
+; 5.046 ; Quad:rightMotorEncoder|spd_sum[0]  ; Quad:rightMotorEncoder|spd[13] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.959     ;
+; 5.046 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[7]   ; clk          ; clk         ; 20.000       ; 0.014      ; 15.000     ;
+; 5.047 ; Quad:leftMotorEncoder|spd_sum[3]   ; Quad:leftMotorEncoder|spd[5]   ; clk          ; clk         ; 20.000       ; 0.020      ; 15.005     ;
+; 5.048 ; Quad:rightMotorEncoder|spd_sum[6]  ; Quad:rightMotorEncoder|spd[13] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.957     ;
+; 5.050 ; Quad:rightMotorEncoder|spd_sum[2]  ; Quad:rightMotorEncoder|spd[12] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.955     ;
+; 5.053 ; Quad:rightMotorEncoder|spd_sum[4]  ; Quad:rightMotorEncoder|spd[10] ; clk          ; clk         ; 20.000       ; -0.027     ; 14.952     ;
++-------+------------------------------------+--------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                          ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; Quad:leftMotorEncoder|timer[0]          ; Quad:leftMotorEncoder|timer[0]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Quad:leftMotorEncoder|cnt[23]           ; Quad:leftMotorEncoder|cnt[23]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Quad:rightWheelEncoder|cnt[23]          ; Quad:rightWheelEncoder|cnt[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Quad:leftWheelEncoder|cnt[23]           ; Quad:leftWheelEncoder|cnt[23]           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Quad:rightMotorEncoder|cnt[23]          ; Quad:rightMotorEncoder|cnt[23]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.238 ; Quad:rightMotorEncoder|spd_array[6][14] ; Quad:rightMotorEncoder|spd_array[7][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.390      ;
+; 0.239 ; Quad:leftMotorEncoder|spd_array[3][4]   ; Quad:leftMotorEncoder|spd_array[4][4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:leftMotorEncoder|spd_array[0][11]  ; Quad:leftMotorEncoder|spd_array[1][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:rightWheelEncoder|spd_array[3][10] ; Quad:rightWheelEncoder|spd_array[4][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:rightWheelEncoder|spd_array[5][9]  ; Quad:rightWheelEncoder|spd_array[6][9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:rightWheelEncoder|spd_array[7][5]  ; Quad:rightWheelEncoder|spd_array[8][5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:leftWheelEncoder|spd_array[1][5]   ; Quad:leftWheelEncoder|spd_array[2][5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:leftWheelEncoder|spd_array[3][12]  ; Quad:leftWheelEncoder|spd_array[4][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:leftWheelEncoder|spd_array[8][13]  ; Quad:leftWheelEncoder|spd_array[9][13]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:rightWheelEncoder|spd_array[4][14] ; Quad:rightWheelEncoder|spd_array[5][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.239 ; Quad:leftWheelEncoder|spd_array[6][14]  ; Quad:leftWheelEncoder|spd_array[7][14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.391      ;
+; 0.240 ; Quad:leftMotorEncoder|spd_array[2][11]  ; Quad:leftMotorEncoder|spd_array[3][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; Quad:leftMotorEncoder|spd_array[0][14]  ; Quad:leftMotorEncoder|spd_array[1][14]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; Quad:rightWheelEncoder|spd_array[2][11] ; Quad:rightWheelEncoder|spd_array[3][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; Quad:leftWheelEncoder|spd_array[0][5]   ; Quad:leftWheelEncoder|spd_array[1][5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; Quad:leftWheelEncoder|spd_array[4][8]   ; Quad:leftWheelEncoder|spd_array[5][8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.240 ; Quad:leftWheelEncoder|spd_array[6][9]   ; Quad:leftWheelEncoder|spd_array[7][9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.392      ;
+; 0.241 ; Quad:leftMotorEncoder|spd_array[0][6]   ; Quad:leftMotorEncoder|spd_array[1][6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Quad:leftMotorEncoder|spd_array[3][11]  ; Quad:leftMotorEncoder|spd_array[4][11]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Quad:rightMotorEncoder|spd_array[3][6]  ; Quad:rightMotorEncoder|spd_array[4][6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Quad:rightMotorEncoder|spd_array[3][10] ; Quad:rightMotorEncoder|spd_array[4][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Quad:rightMotorEncoder|spd_array[4][10] ; Quad:rightMotorEncoder|spd_array[5][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Quad:rightWheelEncoder|spd_array[6][1]  ; Quad:rightWheelEncoder|spd_array[7][1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.241 ; Quad:rightWheelEncoder|spd_array[2][13] ; Quad:rightWheelEncoder|spd_array[3][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.242 ; Quad:rightMotorEncoder|spd_array[2][13] ; Quad:rightMotorEncoder|spd_array[3][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.242 ; Quad:rightWheelEncoder|spd_array[2][10] ; Quad:rightWheelEncoder|spd_array[3][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.394      ;
+; 0.243 ; Quad:leftMotorEncoder|spd_array[0][7]   ; Quad:leftMotorEncoder|spd_array[1][7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Quad:rightMotorEncoder|spd_array[3][12] ; Quad:rightMotorEncoder|spd_array[4][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Quad:rightWheelEncoder|spd_array[2][12] ; Quad:rightWheelEncoder|spd_array[3][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.243 ; Quad:rightWheelEncoder|spd_array[3][13] ; Quad:rightWheelEncoder|spd_array[4][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.395      ;
+; 0.244 ; Quad:leftMotorEncoder|spd_array[1][7]   ; Quad:leftMotorEncoder|spd_array[2][7]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; Quad:leftMotorEncoder|spd_array[0][12]  ; Quad:leftMotorEncoder|spd_array[1][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.244 ; Quad:leftWheelEncoder|spd_array[6][3]   ; Quad:leftWheelEncoder|spd_array[7][3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
+; 0.247 ; Quad:rightWheelEncoder|spd_array[1][12] ; Quad:rightWheelEncoder|spd_array[2][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.399      ;
+; 0.253 ; Quad:rightWheelEncoder|Br[0]            ; Quad:rightWheelEncoder|Br[1]            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.405      ;
+; 0.257 ; Quad:rightMotorEncoder|Ar[0]            ; Quad:rightMotorEncoder|Ar[1]            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.409      ;
+; 0.258 ; Quad:leftMotorEncoder|Ar[0]             ; Quad:leftMotorEncoder|Ar[1]             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.410      ;
+; 0.258 ; Quad:rightMotorEncoder|Br[0]            ; Quad:rightMotorEncoder|Br[1]            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.410      ;
+; 0.311 ; Quad:leftMotorEncoder|spd_array[5][7]   ; Quad:leftMotorEncoder|spd_array[6][7]   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.465      ;
+; 0.314 ; Quad:rightWheelEncoder|spd_array[4][1]  ; Quad:rightWheelEncoder|spd_array[5][1]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.467      ;
+; 0.318 ; Quad:leftMotorEncoder|spd_array[5][8]   ; Quad:leftMotorEncoder|spd_array[6][8]   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.472      ;
+; 0.319 ; Quad:leftWheelEncoder|spd_array[1][11]  ; Quad:leftWheelEncoder|spd_array[2][11]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.470      ;
+; 0.320 ; Quad:rightMotorEncoder|spd_array[5][11] ; Quad:rightMotorEncoder|spd_array[6][11] ; clk          ; clk         ; 0.000        ; 0.001      ; 0.473      ;
+; 0.321 ; Quad:rightMotorEncoder|spd_array[3][3]  ; Quad:rightMotorEncoder|spd_array[4][3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.473      ;
+; 0.321 ; Quad:rightMotorEncoder|spd_array[2][10] ; Quad:rightMotorEncoder|spd_array[3][10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.473      ;
+; 0.322 ; Quad:leftMotorEncoder|timer[1]          ; Quad:leftMotorEncoder|timer[7]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.474      ;
+; 0.322 ; Quad:leftMotorEncoder|spd_array[4][1]   ; Quad:leftMotorEncoder|spd_array[5][1]   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.476      ;
+; 0.322 ; Quad:leftMotorEncoder|spd_array[5][5]   ; Quad:leftMotorEncoder|spd_array[6][5]   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.476      ;
+; 0.322 ; Quad:leftMotorEncoder|spd_array[5][11]  ; Quad:leftMotorEncoder|spd_array[6][11]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.476      ;
+; 0.322 ; Quad:rightWheelEncoder|spd_array[5][4]  ; Quad:rightWheelEncoder|spd_array[6][4]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.475      ;
+; 0.323 ; Quad:leftMotorEncoder|spd_array[5][6]   ; Quad:leftMotorEncoder|spd_array[6][6]   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.477      ;
+; 0.323 ; Quad:leftMotorEncoder|spd_array[5][9]   ; Quad:leftMotorEncoder|spd_array[6][9]   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.477      ;
+; 0.323 ; Quad:rightMotorEncoder|spd_array[5][8]  ; Quad:rightMotorEncoder|spd_array[6][8]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.476      ;
+; 0.323 ; Quad:rightWheelEncoder|spd_array[7][12] ; Quad:rightWheelEncoder|spd_array[8][12] ; clk          ; clk         ; 0.000        ; 0.001      ; 0.476      ;
+; 0.323 ; Quad:leftWheelEncoder|spd_array[1][9]   ; Quad:leftWheelEncoder|spd_array[2][9]   ; clk          ; clk         ; 0.000        ; -0.001     ; 0.474      ;
+; 0.324 ; Quad:leftMotorEncoder|timer[1]          ; Quad:leftMotorEncoder|timer[4]          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; Quad:leftMotorEncoder|spd_array[5][4]   ; Quad:leftMotorEncoder|spd_array[6][4]   ; clk          ; clk         ; 0.000        ; 0.002      ; 0.478      ;
+; 0.324 ; Quad:rightMotorEncoder|spd_array[3][11] ; Quad:rightMotorEncoder|spd_array[4][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; Quad:rightWheelEncoder|spd_array[1][1]  ; Quad:rightWheelEncoder|spd_array[2][1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; Quad:rightWheelEncoder|spd_array[2][4]  ; Quad:rightWheelEncoder|spd_array[3][4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.476      ;
+; 0.324 ; Quad:rightWheelEncoder|spd_array[7][9]  ; Quad:rightWheelEncoder|spd_array[8][9]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.477      ;
+; 0.325 ; Quad:leftMotorEncoder|spd_array[8][2]   ; Quad:leftMotorEncoder|spd_array[9][2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; Quad:leftMotorEncoder|spd_array[0][5]   ; Quad:leftMotorEncoder|spd_array[1][5]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; Quad:rightMotorEncoder|spd_array[5][4]  ; Quad:rightMotorEncoder|spd_array[6][4]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.478      ;
+; 0.325 ; Quad:rightMotorEncoder|spd_array[2][5]  ; Quad:rightMotorEncoder|spd_array[3][5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; Quad:rightMotorEncoder|spd_array[5][7]  ; Quad:rightMotorEncoder|spd_array[6][7]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.478      ;
+; 0.325 ; Quad:rightMotorEncoder|spd_array[5][9]  ; Quad:rightMotorEncoder|spd_array[6][9]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.478      ;
+; 0.325 ; Quad:rightMotorEncoder|spd_array[7][10] ; Quad:rightMotorEncoder|spd_array[8][10] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.476      ;
+; 0.325 ; Quad:rightWheelEncoder|spd_array[4][9]  ; Quad:rightWheelEncoder|spd_array[5][9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; Quad:rightWheelEncoder|spd_array[3][12] ; Quad:rightWheelEncoder|spd_array[4][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; Quad:rightWheelEncoder|spd_array[5][8]  ; Quad:rightWheelEncoder|spd_array[6][8]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.478      ;
+; 0.325 ; Quad:leftWheelEncoder|spd_array[7][8]   ; Quad:leftWheelEncoder|spd_array[8][8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.325 ; Quad:rightWheelEncoder|spd_array[5][14] ; Quad:rightWheelEncoder|spd_array[6][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.477      ;
+; 0.326 ; Quad:leftMotorEncoder|spd_array[5][12]  ; Quad:leftMotorEncoder|spd_array[6][12]  ; clk          ; clk         ; 0.000        ; 0.002      ; 0.480      ;
+; 0.326 ; Quad:leftMotorEncoder|spd_array[8][14]  ; Quad:leftMotorEncoder|spd_array[9][14]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.477      ;
+; 0.326 ; Quad:rightMotorEncoder|spd_array[5][5]  ; Quad:rightMotorEncoder|spd_array[6][5]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.479      ;
+; 0.326 ; Quad:rightMotorEncoder|spd_array[1][7]  ; Quad:rightMotorEncoder|spd_array[2][7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; Quad:rightMotorEncoder|spd_array[7][12] ; Quad:rightMotorEncoder|spd_array[8][12] ; clk          ; clk         ; 0.000        ; -0.001     ; 0.477      ;
+; 0.326 ; Quad:rightMotorEncoder|spd_array[5][13] ; Quad:rightMotorEncoder|spd_array[6][13] ; clk          ; clk         ; 0.000        ; 0.001      ; 0.479      ;
+; 0.326 ; Quad:rightMotorEncoder|spd_array[7][14] ; Quad:rightMotorEncoder|spd_array[8][14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; Quad:rightWheelEncoder|spd_array[0][1]  ; Quad:rightWheelEncoder|spd_array[1][1]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.477      ;
+; 0.326 ; Quad:rightWheelEncoder|spd_array[1][11] ; Quad:rightWheelEncoder|spd_array[2][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; Quad:rightWheelEncoder|spd_array[4][7]  ; Quad:rightWheelEncoder|spd_array[5][7]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.479      ;
+; 0.326 ; Quad:rightWheelEncoder|spd_array[5][6]  ; Quad:rightWheelEncoder|spd_array[6][6]  ; clk          ; clk         ; 0.000        ; 0.001      ; 0.479      ;
+; 0.326 ; Quad:rightWheelEncoder|spd_array[5][11] ; Quad:rightWheelEncoder|spd_array[6][11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; Quad:rightWheelEncoder|spd_array[7][11] ; Quad:rightWheelEncoder|spd_array[8][11] ; clk          ; clk         ; 0.000        ; 0.001      ; 0.479      ;
+; 0.326 ; Quad:leftWheelEncoder|spd_array[1][10]  ; Quad:leftWheelEncoder|spd_array[2][10]  ; clk          ; clk         ; 0.000        ; -0.001     ; 0.477      ;
+; 0.326 ; Quad:leftWheelEncoder|spd_array[4][12]  ; Quad:leftWheelEncoder|spd_array[5][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.326 ; Quad:leftWheelEncoder|spd_array[5][12]  ; Quad:leftWheelEncoder|spd_array[6][12]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.327 ; Quad:leftMotorEncoder|spd_array[5][1]   ; Quad:leftMotorEncoder|spd_array[6][1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.327 ; Quad:rightMotorEncoder|spd_array[2][12] ; Quad:rightMotorEncoder|spd_array[3][12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.327 ; Quad:rightMotorEncoder|spd_array[3][13] ; Quad:rightMotorEncoder|spd_array[4][13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.327 ; Quad:rightWheelEncoder|spd_array[1][7]  ; Quad:rightWheelEncoder|spd_array[2][7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
+; 0.327 ; Quad:leftWheelEncoder|spd_array[1][3]   ; Quad:leftWheelEncoder|spd_array[2][3]   ; clk          ; clk         ; 0.000        ; -0.001     ; 0.478      ;
+; 0.327 ; Quad:leftWheelEncoder|spd_array[2][10]  ; Quad:leftWheelEncoder|spd_array[3][10]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.479      ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                             ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                            ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[0]       ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[0]       ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[1]       ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Ar[1]       ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[0]       ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[0]       ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[1]       ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|Br[1]       ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[0]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[0]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[10]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[10]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[11]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[11]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[12]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[12]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[13]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[13]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[14]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[14]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[15]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[15]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[16]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[16]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[17]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[17]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[18]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[18]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[19]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[19]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[1]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[1]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[20]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[20]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[21]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[21]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[22]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[22]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[23]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[23]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[2]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[2]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[3]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[3]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[4]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[4]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[5]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[5]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[6]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[6]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[7]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[7]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[8]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[8]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[9]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|cnt[9]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[10] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[11] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[12] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[13] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[14] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[14] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[1]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[2]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[3]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[4]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[5]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[6]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[7]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[8]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|prevCnt[9]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[0]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[0]      ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[10]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[10]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[11]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[11]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[12]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[12]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[13]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[13]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[14]     ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[14]     ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[1]      ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; Quad:leftMotorEncoder|spd[1]      ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ch1A      ; clk        ; 1.833 ; 1.833 ; Rise       ; clk             ;
+; ch1B      ; clk        ; 2.260 ; 2.260 ; Rise       ; clk             ;
+; ch2A      ; clk        ; 2.363 ; 2.363 ; Rise       ; clk             ;
+; ch2B      ; clk        ; 2.339 ; 2.339 ; Rise       ; clk             ;
+; ch3A      ; clk        ; 2.423 ; 2.423 ; Rise       ; clk             ;
+; ch3B      ; clk        ; 2.197 ; 2.197 ; Rise       ; clk             ;
+; ch4A      ; clk        ; 2.852 ; 2.852 ; Rise       ; clk             ;
+; ch4B      ; clk        ; 2.553 ; 2.553 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ch1A      ; clk        ; -1.713 ; -1.713 ; Rise       ; clk             ;
+; ch1B      ; clk        ; -2.140 ; -2.140 ; Rise       ; clk             ;
+; ch2A      ; clk        ; -2.243 ; -2.243 ; Rise       ; clk             ;
+; ch2B      ; clk        ; -2.219 ; -2.219 ; Rise       ; clk             ;
+; ch3A      ; clk        ; -2.303 ; -2.303 ; Rise       ; clk             ;
+; ch3B      ; clk        ; -2.077 ; -2.077 ; Rise       ; clk             ;
+; ch4A      ; clk        ; -2.732 ; -2.732 ; Rise       ; clk             ;
+; ch4B      ; clk        ; -2.433 ; -2.433 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; count_out[*]   ; clk        ; 5.647 ; 5.647 ; Rise       ; clk             ;
+;  count_out[0]  ; clk        ; 5.571 ; 5.571 ; Rise       ; clk             ;
+;  count_out[1]  ; clk        ; 5.294 ; 5.294 ; Rise       ; clk             ;
+;  count_out[2]  ; clk        ; 5.548 ; 5.548 ; Rise       ; clk             ;
+;  count_out[3]  ; clk        ; 5.542 ; 5.542 ; Rise       ; clk             ;
+;  count_out[4]  ; clk        ; 5.434 ; 5.434 ; Rise       ; clk             ;
+;  count_out[5]  ; clk        ; 5.279 ; 5.279 ; Rise       ; clk             ;
+;  count_out[6]  ; clk        ; 5.400 ; 5.400 ; Rise       ; clk             ;
+;  count_out[7]  ; clk        ; 5.647 ; 5.647 ; Rise       ; clk             ;
+;  count_out[8]  ; clk        ; 4.983 ; 4.983 ; Rise       ; clk             ;
+;  count_out[9]  ; clk        ; 5.392 ; 5.392 ; Rise       ; clk             ;
+;  count_out[10] ; clk        ; 5.497 ; 5.497 ; Rise       ; clk             ;
+;  count_out[11] ; clk        ; 5.400 ; 5.400 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; count_out[*]   ; clk        ; 4.121 ; 4.121 ; Rise       ; clk             ;
+;  count_out[0]  ; clk        ; 4.400 ; 4.400 ; Rise       ; clk             ;
+;  count_out[1]  ; clk        ; 4.540 ; 4.540 ; Rise       ; clk             ;
+;  count_out[2]  ; clk        ; 4.420 ; 4.420 ; Rise       ; clk             ;
+;  count_out[3]  ; clk        ; 4.747 ; 4.747 ; Rise       ; clk             ;
+;  count_out[4]  ; clk        ; 4.160 ; 4.160 ; Rise       ; clk             ;
+;  count_out[5]  ; clk        ; 4.493 ; 4.493 ; Rise       ; clk             ;
+;  count_out[6]  ; clk        ; 4.334 ; 4.334 ; Rise       ; clk             ;
+;  count_out[7]  ; clk        ; 4.718 ; 4.718 ; Rise       ; clk             ;
+;  count_out[8]  ; clk        ; 4.121 ; 4.121 ; Rise       ; clk             ;
+;  count_out[9]  ; clk        ; 4.266 ; 4.266 ; Rise       ; clk             ;
+;  count_out[10] ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  count_out[11] ; clk        ; 4.537 ; 4.537 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------+
+; Propagation Delay                                          ;
++------------+---------------+-------+-------+-------+-------+
+; Input Port ; Output Port   ; RR    ; RF    ; FR    ; FF    ;
++------------+---------------+-------+-------+-------+-------+
+; ch4A       ; led1          ; 4.995 ;       ;       ; 4.995 ;
+; ch4B       ; led2          ; 4.997 ;       ;       ; 4.997 ;
+; sel[0]     ; count_out[0]  ; 4.441 ; 4.441 ; 4.441 ; 4.441 ;
+; sel[0]     ; count_out[1]  ; 4.347 ; 4.347 ; 4.347 ; 4.347 ;
+; sel[0]     ; count_out[2]  ; 4.448 ; 4.448 ; 4.448 ; 4.448 ;
+; sel[0]     ; count_out[3]  ; 3.956 ; 3.956 ; 3.956 ; 3.956 ;
+; sel[0]     ; count_out[4]  ; 3.710 ; 3.710 ; 3.710 ; 3.710 ;
+; sel[0]     ; count_out[5]  ; 3.648 ; 3.648 ; 3.648 ; 3.648 ;
+; sel[0]     ; count_out[6]  ; 3.618 ; 3.618 ; 3.618 ; 3.618 ;
+; sel[0]     ; count_out[7]  ; 3.987 ; 3.987 ; 3.987 ; 3.987 ;
+; sel[0]     ; count_out[8]  ; 3.472 ; 3.472 ; 3.472 ; 3.472 ;
+; sel[0]     ; count_out[9]  ; 3.755 ; 3.755 ; 3.755 ; 3.755 ;
+; sel[0]     ; count_out[10] ; 3.772 ; 3.772 ; 3.772 ; 3.772 ;
+; sel[0]     ; count_out[11] ; 4.351 ; 4.351 ; 4.351 ; 4.351 ;
+; sel[1]     ; count_out[0]  ; 4.075 ; 4.075 ; 4.075 ; 4.075 ;
+; sel[1]     ; count_out[1]  ; 3.808 ; 3.808 ; 3.808 ; 3.808 ;
+; sel[1]     ; count_out[2]  ; 3.934 ; 3.934 ; 3.934 ; 3.934 ;
+; sel[1]     ; count_out[3]  ; 4.588 ; 4.588 ; 4.588 ; 4.588 ;
+; sel[1]     ; count_out[4]  ; 4.560 ; 4.560 ; 4.560 ; 4.560 ;
+; sel[1]     ; count_out[5]  ; 4.509 ; 4.509 ; 4.509 ; 4.509 ;
+; sel[1]     ; count_out[6]  ; 4.458 ; 4.458 ; 4.458 ; 4.458 ;
+; sel[1]     ; count_out[7]  ; 4.865 ; 4.865 ; 4.865 ; 4.865 ;
+; sel[1]     ; count_out[8]  ; 4.101 ; 4.101 ; 4.101 ; 4.101 ;
+; sel[1]     ; count_out[9]  ; 4.324 ; 4.324 ; 4.324 ; 4.324 ;
+; sel[1]     ; count_out[10] ; 4.634 ; 4.634 ; 4.634 ; 4.634 ;
+; sel[1]     ; count_out[11] ; 3.917 ; 3.917 ; 3.917 ; 3.917 ;
+; sel[2]     ; count_out[0]  ; 4.175 ; 4.175 ; 4.175 ; 4.175 ;
+; sel[2]     ; count_out[1]  ; 3.901 ; 3.901 ; 3.901 ; 3.901 ;
+; sel[2]     ; count_out[2]  ; 4.030 ; 4.030 ; 4.030 ; 4.030 ;
+; sel[2]     ; count_out[3]  ; 4.604 ; 4.604 ; 4.604 ; 4.604 ;
+; sel[2]     ; count_out[4]  ; 4.460 ; 4.460 ; 4.460 ; 4.460 ;
+; sel[2]     ; count_out[5]  ; 4.312 ; 4.312 ; 4.312 ; 4.312 ;
+; sel[2]     ; count_out[6]  ; 4.342 ; 4.342 ; 4.342 ; 4.342 ;
+; sel[2]     ; count_out[7]  ; 4.852 ; 4.852 ; 4.852 ; 4.852 ;
+; sel[2]     ; count_out[8]  ; 4.223 ; 4.223 ; 4.223 ; 4.223 ;
+; sel[2]     ; count_out[9]  ; 4.382 ; 4.382 ; 4.382 ; 4.382 ;
+; sel[2]     ; count_out[10] ; 4.779 ; 4.779 ; 4.779 ; 4.779 ;
+; sel[2]     ; count_out[11] ; 3.984 ; 3.984 ; 3.984 ; 3.984 ;
+; sel[3]     ; count_out[0]  ; 4.664 ; 4.664 ; 4.664 ; 4.664 ;
+; sel[3]     ; count_out[1]  ; 4.576 ; 4.576 ; 4.576 ; 4.576 ;
+; sel[3]     ; count_out[2]  ; 4.638 ; 4.638 ; 4.638 ; 4.638 ;
+; sel[3]     ; count_out[3]  ; 4.053 ; 4.053 ; 4.053 ; 4.053 ;
+; sel[3]     ; count_out[4]  ; 4.165 ; 4.165 ; 4.165 ; 4.165 ;
+; sel[3]     ; count_out[5]  ; 3.781 ; 3.781 ; 3.781 ; 3.781 ;
+; sel[3]     ; count_out[6]  ; 3.750 ; 3.750 ; 3.750 ; 3.750 ;
+; sel[3]     ; count_out[7]  ; 4.383 ; 4.383 ; 4.383 ; 4.383 ;
+; sel[3]     ; count_out[8]  ; 3.737 ; 3.737 ; 3.737 ; 3.737 ;
+; sel[3]     ; count_out[9]  ; 3.839 ; 3.839 ; 3.839 ; 3.839 ;
+; sel[3]     ; count_out[10] ; 4.176 ; 4.176 ; 4.176 ; 4.176 ;
+; sel[3]     ; count_out[11] ; 4.637 ; 4.637 ; 4.637 ; 4.637 ;
++------------+---------------+-------+-------+-------+-------+
+
+
++------------------------------------------------------------+
+; Minimum Propagation Delay                                  ;
++------------+---------------+-------+-------+-------+-------+
+; Input Port ; Output Port   ; RR    ; RF    ; FR    ; FF    ;
++------------+---------------+-------+-------+-------+-------+
+; ch4A       ; led1          ; 4.995 ;       ;       ; 4.995 ;
+; ch4B       ; led2          ; 4.997 ;       ;       ; 4.997 ;
+; sel[0]     ; count_out[0]  ; 4.062 ; 4.062 ; 4.062 ; 4.062 ;
+; sel[0]     ; count_out[1]  ; 3.948 ; 3.948 ; 3.948 ; 3.948 ;
+; sel[0]     ; count_out[2]  ; 4.012 ; 4.012 ; 4.012 ; 4.012 ;
+; sel[0]     ; count_out[3]  ; 3.542 ; 3.542 ; 3.542 ; 3.542 ;
+; sel[0]     ; count_out[4]  ; 3.710 ; 3.710 ; 3.710 ; 3.710 ;
+; sel[0]     ; count_out[5]  ; 3.488 ; 3.488 ; 3.488 ; 3.488 ;
+; sel[0]     ; count_out[6]  ; 3.618 ; 3.618 ; 3.618 ; 3.618 ;
+; sel[0]     ; count_out[7]  ; 3.555 ; 3.555 ; 3.555 ; 3.555 ;
+; sel[0]     ; count_out[8]  ; 3.472 ; 3.472 ; 3.472 ; 3.472 ;
+; sel[0]     ; count_out[9]  ; 3.469 ; 3.469 ; 3.469 ; 3.469 ;
+; sel[0]     ; count_out[10] ; 3.772 ; 3.772 ; 3.772 ; 3.772 ;
+; sel[0]     ; count_out[11] ; 3.925 ; 3.925 ; 3.925 ; 3.925 ;
+; sel[1]     ; count_out[0]  ; 3.933 ; 3.933 ; 3.933 ; 3.933 ;
+; sel[1]     ; count_out[1]  ; 3.808 ; 3.808 ; 3.808 ; 3.808 ;
+; sel[1]     ; count_out[2]  ; 3.855 ; 3.855 ; 3.855 ; 3.855 ;
+; sel[1]     ; count_out[3]  ; 4.225 ; 4.225 ; 4.225 ; 4.225 ;
+; sel[1]     ; count_out[4]  ; 3.886 ; 3.886 ; 3.886 ; 3.886 ;
+; sel[1]     ; count_out[5]  ; 3.901 ; 3.901 ; 3.901 ; 3.901 ;
+; sel[1]     ; count_out[6]  ; 4.021 ; 4.021 ; 4.021 ; 4.021 ;
+; sel[1]     ; count_out[7]  ; 3.911 ; 3.911 ; 3.911 ; 3.911 ;
+; sel[1]     ; count_out[8]  ; 3.634 ; 3.634 ; 3.634 ; 3.634 ;
+; sel[1]     ; count_out[9]  ; 3.861 ; 3.861 ; 3.861 ; 3.861 ;
+; sel[1]     ; count_out[10] ; 4.058 ; 4.058 ; 4.058 ; 4.058 ;
+; sel[1]     ; count_out[11] ; 3.917 ; 3.917 ; 3.917 ; 3.917 ;
+; sel[2]     ; count_out[0]  ; 4.175 ; 4.175 ; 4.175 ; 4.175 ;
+; sel[2]     ; count_out[1]  ; 3.736 ; 3.736 ; 3.736 ; 3.736 ;
+; sel[2]     ; count_out[2]  ; 4.030 ; 4.030 ; 4.030 ; 4.030 ;
+; sel[2]     ; count_out[3]  ; 3.878 ; 3.878 ; 3.878 ; 3.878 ;
+; sel[2]     ; count_out[4]  ; 4.195 ; 4.195 ; 4.195 ; 4.195 ;
+; sel[2]     ; count_out[5]  ; 4.056 ; 4.056 ; 4.056 ; 4.056 ;
+; sel[2]     ; count_out[6]  ; 4.013 ; 4.013 ; 4.013 ; 4.013 ;
+; sel[2]     ; count_out[7]  ; 4.364 ; 4.364 ; 4.364 ; 4.364 ;
+; sel[2]     ; count_out[8]  ; 3.747 ; 3.747 ; 3.747 ; 3.747 ;
+; sel[2]     ; count_out[9]  ; 3.937 ; 3.937 ; 3.937 ; 3.937 ;
+; sel[2]     ; count_out[10] ; 4.426 ; 4.426 ; 4.426 ; 4.426 ;
+; sel[2]     ; count_out[11] ; 3.623 ; 3.623 ; 3.623 ; 3.623 ;
+; sel[3]     ; count_out[0]  ; 4.252 ; 4.252 ; 4.252 ; 4.252 ;
+; sel[3]     ; count_out[1]  ; 4.108 ; 4.108 ; 4.108 ; 4.108 ;
+; sel[3]     ; count_out[2]  ; 4.079 ; 4.079 ; 4.079 ; 4.079 ;
+; sel[3]     ; count_out[3]  ; 4.053 ; 4.053 ; 4.053 ; 4.053 ;
+; sel[3]     ; count_out[4]  ; 3.945 ; 3.945 ; 3.945 ; 3.945 ;
+; sel[3]     ; count_out[5]  ; 3.781 ; 3.781 ; 3.781 ; 3.781 ;
+; sel[3]     ; count_out[6]  ; 3.625 ; 3.625 ; 3.625 ; 3.625 ;
+; sel[3]     ; count_out[7]  ; 4.383 ; 4.383 ; 4.383 ; 4.383 ;
+; sel[3]     ; count_out[8]  ; 3.418 ; 3.418 ; 3.418 ; 3.418 ;
+; sel[3]     ; count_out[9]  ; 3.839 ; 3.839 ; 3.839 ; 3.839 ;
+; sel[3]     ; count_out[10] ; 3.892 ; 3.892 ; 3.892 ; 3.892 ;
+; sel[3]     ; count_out[11] ; 3.794 ; 3.794 ; 3.794 ; 3.794 ;
++------------+---------------+-------+-------+-------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -29.455  ; 0.215 ; N/A      ; N/A     ; 8.758               ;
+;  clk             ; -29.455  ; 0.215 ; N/A      ; N/A     ; 8.758               ;
+; Design-wide TNS  ; -844.505 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk             ; -844.505 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; ch1A      ; clk        ; 3.744 ; 3.744 ; Rise       ; clk             ;
+; ch1B      ; clk        ; 4.834 ; 4.834 ; Rise       ; clk             ;
+; ch2A      ; clk        ; 5.225 ; 5.225 ; Rise       ; clk             ;
+; ch2B      ; clk        ; 5.168 ; 5.168 ; Rise       ; clk             ;
+; ch3A      ; clk        ; 5.389 ; 5.389 ; Rise       ; clk             ;
+; ch3B      ; clk        ; 4.950 ; 4.950 ; Rise       ; clk             ;
+; ch4A      ; clk        ; 6.326 ; 6.326 ; Rise       ; clk             ;
+; ch4B      ; clk        ; 5.664 ; 5.664 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; ch1A      ; clk        ; -1.713 ; -1.713 ; Rise       ; clk             ;
+; ch1B      ; clk        ; -2.140 ; -2.140 ; Rise       ; clk             ;
+; ch2A      ; clk        ; -2.243 ; -2.243 ; Rise       ; clk             ;
+; ch2B      ; clk        ; -2.219 ; -2.219 ; Rise       ; clk             ;
+; ch3A      ; clk        ; -2.303 ; -2.303 ; Rise       ; clk             ;
+; ch3B      ; clk        ; -2.077 ; -2.077 ; Rise       ; clk             ;
+; ch4A      ; clk        ; -2.732 ; -2.732 ; Rise       ; clk             ;
+; ch4B      ; clk        ; -2.433 ; -2.433 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; count_out[*]   ; clk        ; 14.393 ; 14.393 ; Rise       ; clk             ;
+;  count_out[0]  ; clk        ; 13.913 ; 13.913 ; Rise       ; clk             ;
+;  count_out[1]  ; clk        ; 12.994 ; 12.994 ; Rise       ; clk             ;
+;  count_out[2]  ; clk        ; 13.864 ; 13.864 ; Rise       ; clk             ;
+;  count_out[3]  ; clk        ; 13.914 ; 13.914 ; Rise       ; clk             ;
+;  count_out[4]  ; clk        ; 13.585 ; 13.585 ; Rise       ; clk             ;
+;  count_out[5]  ; clk        ; 13.117 ; 13.117 ; Rise       ; clk             ;
+;  count_out[6]  ; clk        ; 13.386 ; 13.386 ; Rise       ; clk             ;
+;  count_out[7]  ; clk        ; 14.393 ; 14.393 ; Rise       ; clk             ;
+;  count_out[8]  ; clk        ; 12.144 ; 12.144 ; Rise       ; clk             ;
+;  count_out[9]  ; clk        ; 13.549 ; 13.549 ; Rise       ; clk             ;
+;  count_out[10] ; clk        ; 13.828 ; 13.828 ; Rise       ; clk             ;
+;  count_out[11] ; clk        ; 13.363 ; 13.363 ; Rise       ; clk             ;
++----------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++----------------+------------+-------+-------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++----------------+------------+-------+-------+------------+-----------------+
+; count_out[*]   ; clk        ; 4.121 ; 4.121 ; Rise       ; clk             ;
+;  count_out[0]  ; clk        ; 4.400 ; 4.400 ; Rise       ; clk             ;
+;  count_out[1]  ; clk        ; 4.540 ; 4.540 ; Rise       ; clk             ;
+;  count_out[2]  ; clk        ; 4.420 ; 4.420 ; Rise       ; clk             ;
+;  count_out[3]  ; clk        ; 4.747 ; 4.747 ; Rise       ; clk             ;
+;  count_out[4]  ; clk        ; 4.160 ; 4.160 ; Rise       ; clk             ;
+;  count_out[5]  ; clk        ; 4.493 ; 4.493 ; Rise       ; clk             ;
+;  count_out[6]  ; clk        ; 4.334 ; 4.334 ; Rise       ; clk             ;
+;  count_out[7]  ; clk        ; 4.718 ; 4.718 ; Rise       ; clk             ;
+;  count_out[8]  ; clk        ; 4.121 ; 4.121 ; Rise       ; clk             ;
+;  count_out[9]  ; clk        ; 4.266 ; 4.266 ; Rise       ; clk             ;
+;  count_out[10] ; clk        ; 4.352 ; 4.352 ; Rise       ; clk             ;
+;  count_out[11] ; clk        ; 4.537 ; 4.537 ; Rise       ; clk             ;
++----------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------+
+; Progagation Delay                                              ;
++------------+---------------+--------+--------+--------+--------+
+; Input Port ; Output Port   ; RR     ; RF     ; FR     ; FF     ;
++------------+---------------+--------+--------+--------+--------+
+; ch4A       ; led1          ; 10.269 ;        ;        ; 10.269 ;
+; ch4B       ; led2          ; 10.281 ;        ;        ; 10.281 ;
+; sel[0]     ; count_out[0]  ; 11.526 ; 11.526 ; 11.526 ; 11.526 ;
+; sel[0]     ; count_out[1]  ; 11.265 ; 11.265 ; 11.265 ; 11.265 ;
+; sel[0]     ; count_out[2]  ; 11.606 ; 11.606 ; 11.606 ; 11.606 ;
+; sel[0]     ; count_out[3]  ; 9.929  ; 9.929  ; 9.929  ; 9.929  ;
+; sel[0]     ; count_out[4]  ; 9.361  ; 9.361  ; 9.361  ; 9.361  ;
+; sel[0]     ; count_out[5]  ; 8.978  ; 8.978  ; 8.978  ; 8.978  ;
+; sel[0]     ; count_out[6]  ; 8.921  ; 8.921  ; 8.921  ; 8.921  ;
+; sel[0]     ; count_out[7]  ; 10.108 ; 10.108 ; 10.108 ; 10.108 ;
+; sel[0]     ; count_out[8]  ; 8.499  ; 8.499  ; 8.499  ; 8.499  ;
+; sel[0]     ; count_out[9]  ; 9.455  ; 9.455  ; 9.455  ; 9.455  ;
+; sel[0]     ; count_out[10] ; 9.294  ; 9.294  ; 9.294  ; 9.294  ;
+; sel[0]     ; count_out[11] ; 11.449 ; 11.449 ; 11.449 ; 11.449 ;
+; sel[1]     ; count_out[0]  ; 10.072 ; 10.072 ; 10.072 ; 10.072 ;
+; sel[1]     ; count_out[1]  ; 9.094  ; 9.094  ; 9.094  ; 9.094  ;
+; sel[1]     ; count_out[2]  ; 9.572  ; 9.572  ; 9.572  ; 9.572  ;
+; sel[1]     ; count_out[3]  ; 11.958 ; 11.958 ; 11.958 ; 11.958 ;
+; sel[1]     ; count_out[4]  ; 11.990 ; 11.990 ; 11.990 ; 11.990 ;
+; sel[1]     ; count_out[5]  ; 11.774 ; 11.774 ; 11.774 ; 11.774 ;
+; sel[1]     ; count_out[6]  ; 11.668 ; 11.668 ; 11.668 ; 11.668 ;
+; sel[1]     ; count_out[7]  ; 12.895 ; 12.895 ; 12.895 ; 12.895 ;
+; sel[1]     ; count_out[8]  ; 10.517 ; 10.517 ; 10.517 ; 10.517 ;
+; sel[1]     ; count_out[9]  ; 11.146 ; 11.146 ; 11.146 ; 11.146 ;
+; sel[1]     ; count_out[10] ; 12.015 ; 12.015 ; 12.015 ; 12.015 ;
+; sel[1]     ; count_out[11] ; 9.722  ; 9.722  ; 9.722  ; 9.722  ;
+; sel[2]     ; count_out[0]  ; 10.382 ; 10.382 ; 10.382 ; 10.382 ;
+; sel[2]     ; count_out[1]  ; 9.472  ; 9.472  ; 9.472  ; 9.472  ;
+; sel[2]     ; count_out[2]  ; 9.871  ; 9.871  ; 9.871  ; 9.871  ;
+; sel[2]     ; count_out[3]  ; 12.121 ; 12.121 ; 12.121 ; 12.121 ;
+; sel[2]     ; count_out[4]  ; 11.602 ; 11.602 ; 11.602 ; 11.602 ;
+; sel[2]     ; count_out[5]  ; 10.949 ; 10.949 ; 10.949 ; 10.949 ;
+; sel[2]     ; count_out[6]  ; 11.269 ; 11.269 ; 11.269 ; 11.269 ;
+; sel[2]     ; count_out[7]  ; 12.796 ; 12.796 ; 12.796 ; 12.796 ;
+; sel[2]     ; count_out[8]  ; 10.755 ; 10.755 ; 10.755 ; 10.755 ;
+; sel[2]     ; count_out[9]  ; 11.301 ; 11.301 ; 11.301 ; 11.301 ;
+; sel[2]     ; count_out[10] ; 12.425 ; 12.425 ; 12.425 ; 12.425 ;
+; sel[2]     ; count_out[11] ; 9.892  ; 9.892  ; 9.892  ; 9.892  ;
+; sel[3]     ; count_out[0]  ; 12.020 ; 12.020 ; 12.020 ; 12.020 ;
+; sel[3]     ; count_out[1]  ; 11.696 ; 11.696 ; 11.696 ; 11.696 ;
+; sel[3]     ; count_out[2]  ; 11.998 ; 11.998 ; 11.998 ; 11.998 ;
+; sel[3]     ; count_out[3]  ; 10.041 ; 10.041 ; 10.041 ; 10.041 ;
+; sel[3]     ; count_out[4]  ; 10.526 ; 10.526 ; 10.526 ; 10.526 ;
+; sel[3]     ; count_out[5]  ; 9.195  ; 9.195  ; 9.195  ; 9.195  ;
+; sel[3]     ; count_out[6]  ; 9.139  ; 9.139  ; 9.139  ; 9.139  ;
+; sel[3]     ; count_out[7]  ; 11.151 ; 11.151 ; 11.151 ; 11.151 ;
+; sel[3]     ; count_out[8]  ; 9.193  ; 9.193  ; 9.193  ; 9.193  ;
+; sel[3]     ; count_out[9]  ; 9.490  ; 9.490  ; 9.490  ; 9.490  ;
+; sel[3]     ; count_out[10] ; 10.325 ; 10.325 ; 10.325 ; 10.325 ;
+; sel[3]     ; count_out[11] ; 11.804 ; 11.804 ; 11.804 ; 11.804 ;
++------------+---------------+--------+--------+--------+--------+
+
+
++------------------------------------------------------------+
+; Minimum Progagation Delay                                  ;
++------------+---------------+-------+-------+-------+-------+
+; Input Port ; Output Port   ; RR    ; RF    ; FR    ; FF    ;
++------------+---------------+-------+-------+-------+-------+
+; ch4A       ; led1          ; 4.995 ;       ;       ; 4.995 ;
+; ch4B       ; led2          ; 4.997 ;       ;       ; 4.997 ;
+; sel[0]     ; count_out[0]  ; 4.062 ; 4.062 ; 4.062 ; 4.062 ;
+; sel[0]     ; count_out[1]  ; 3.948 ; 3.948 ; 3.948 ; 3.948 ;
+; sel[0]     ; count_out[2]  ; 4.012 ; 4.012 ; 4.012 ; 4.012 ;
+; sel[0]     ; count_out[3]  ; 3.542 ; 3.542 ; 3.542 ; 3.542 ;
+; sel[0]     ; count_out[4]  ; 3.710 ; 3.710 ; 3.710 ; 3.710 ;
+; sel[0]     ; count_out[5]  ; 3.488 ; 3.488 ; 3.488 ; 3.488 ;
+; sel[0]     ; count_out[6]  ; 3.618 ; 3.618 ; 3.618 ; 3.618 ;
+; sel[0]     ; count_out[7]  ; 3.555 ; 3.555 ; 3.555 ; 3.555 ;
+; sel[0]     ; count_out[8]  ; 3.472 ; 3.472 ; 3.472 ; 3.472 ;
+; sel[0]     ; count_out[9]  ; 3.469 ; 3.469 ; 3.469 ; 3.469 ;
+; sel[0]     ; count_out[10] ; 3.772 ; 3.772 ; 3.772 ; 3.772 ;
+; sel[0]     ; count_out[11] ; 3.925 ; 3.925 ; 3.925 ; 3.925 ;
+; sel[1]     ; count_out[0]  ; 3.933 ; 3.933 ; 3.933 ; 3.933 ;
+; sel[1]     ; count_out[1]  ; 3.808 ; 3.808 ; 3.808 ; 3.808 ;
+; sel[1]     ; count_out[2]  ; 3.855 ; 3.855 ; 3.855 ; 3.855 ;
+; sel[1]     ; count_out[3]  ; 4.225 ; 4.225 ; 4.225 ; 4.225 ;
+; sel[1]     ; count_out[4]  ; 3.886 ; 3.886 ; 3.886 ; 3.886 ;
+; sel[1]     ; count_out[5]  ; 3.901 ; 3.901 ; 3.901 ; 3.901 ;
+; sel[1]     ; count_out[6]  ; 4.021 ; 4.021 ; 4.021 ; 4.021 ;
+; sel[1]     ; count_out[7]  ; 3.911 ; 3.911 ; 3.911 ; 3.911 ;
+; sel[1]     ; count_out[8]  ; 3.634 ; 3.634 ; 3.634 ; 3.634 ;
+; sel[1]     ; count_out[9]  ; 3.861 ; 3.861 ; 3.861 ; 3.861 ;
+; sel[1]     ; count_out[10] ; 4.058 ; 4.058 ; 4.058 ; 4.058 ;
+; sel[1]     ; count_out[11] ; 3.917 ; 3.917 ; 3.917 ; 3.917 ;
+; sel[2]     ; count_out[0]  ; 4.175 ; 4.175 ; 4.175 ; 4.175 ;
+; sel[2]     ; count_out[1]  ; 3.736 ; 3.736 ; 3.736 ; 3.736 ;
+; sel[2]     ; count_out[2]  ; 4.030 ; 4.030 ; 4.030 ; 4.030 ;
+; sel[2]     ; count_out[3]  ; 3.878 ; 3.878 ; 3.878 ; 3.878 ;
+; sel[2]     ; count_out[4]  ; 4.195 ; 4.195 ; 4.195 ; 4.195 ;
+; sel[2]     ; count_out[5]  ; 4.056 ; 4.056 ; 4.056 ; 4.056 ;
+; sel[2]     ; count_out[6]  ; 4.013 ; 4.013 ; 4.013 ; 4.013 ;
+; sel[2]     ; count_out[7]  ; 4.364 ; 4.364 ; 4.364 ; 4.364 ;
+; sel[2]     ; count_out[8]  ; 3.747 ; 3.747 ; 3.747 ; 3.747 ;
+; sel[2]     ; count_out[9]  ; 3.937 ; 3.937 ; 3.937 ; 3.937 ;
+; sel[2]     ; count_out[10] ; 4.426 ; 4.426 ; 4.426 ; 4.426 ;
+; sel[2]     ; count_out[11] ; 3.623 ; 3.623 ; 3.623 ; 3.623 ;
+; sel[3]     ; count_out[0]  ; 4.252 ; 4.252 ; 4.252 ; 4.252 ;
+; sel[3]     ; count_out[1]  ; 4.108 ; 4.108 ; 4.108 ; 4.108 ;
+; sel[3]     ; count_out[2]  ; 4.079 ; 4.079 ; 4.079 ; 4.079 ;
+; sel[3]     ; count_out[3]  ; 4.053 ; 4.053 ; 4.053 ; 4.053 ;
+; sel[3]     ; count_out[4]  ; 3.945 ; 3.945 ; 3.945 ; 3.945 ;
+; sel[3]     ; count_out[5]  ; 3.781 ; 3.781 ; 3.781 ; 3.781 ;
+; sel[3]     ; count_out[6]  ; 3.625 ; 3.625 ; 3.625 ; 3.625 ;
+; sel[3]     ; count_out[7]  ; 4.383 ; 4.383 ; 4.383 ; 4.383 ;
+; sel[3]     ; count_out[8]  ; 3.418 ; 3.418 ; 3.418 ; 3.418 ;
+; sel[3]     ; count_out[9]  ; 3.839 ; 3.839 ; 3.839 ; 3.839 ;
+; sel[3]     ; count_out[10] ; 3.892 ; 3.892 ; 3.892 ; 3.892 ;
+; sel[3]     ; count_out[11] ; 3.794 ; 3.794 ; 3.794 ; 3.794 ;
++------------+---------------+-------+-------+-------+-------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 0     ; 0    ;
+; Unconstrained Output Port Paths ; 0     ; 0    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Jan 19 23:17:20 2014
+Info: Command: quartus_sta Decoder -c Decoder
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'Decoder.out.sdc'
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -29.455
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -29.455      -844.505 clk 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 8.758
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.758         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 4.652
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     4.652         0.000 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.000         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332101): Design is fully constrained for setup requirements
+Info (332101): Design is fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 434 megabytes
+    Info: Processing ended: Sun Jan 19 23:17:23 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

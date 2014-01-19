@@ -1,0 +1,125 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.numeric_std.all;
+
+entity decoder is
+	port (
+		clk, ch1A, ch1B, ch2A, ch2B, ch3A, ch3B, ch4A, ch4B : in std_logic;
+		sel : in std_logic_vector(2 downto 0);
+		count_out : out unsigned(7 downto 0);
+		led1, led2 : out std_logic
+	);
+end entity decoder;
+
+architecture decoderArch of decoder is
+
+	signal clk2 : std_logic := '0';
+	signal timer : integer range 0 to 250000 := 0;
+	signal count1, count2, count3, count4 : unsigned (31 downto 0) := "01000000000000000000000000000000";
+	signal speed1, speed2, speed3, speed4 : integer range 0 to 10000 := 0;
+	signal dSpeed1, dSpeed2 : integer range 0 to 10000 := 0;
+
+	component Quad
+		port (
+			clk : in std_logic;
+			chA : in std_logic;
+			chB : in std_logic;
+			count : out unsigned (31 downto 0)
+
+		);
+	end component Quad;
+
+	component Avg
+		port (
+			clk : in std_logic;
+			number : in integer range 0 to 10000;
+			avg : out integer range 0 to 10000
+		);
+	end component Avg;
+	
+begin
+	leftWheelEncoder : Quad
+		port map (
+			clk => clk,
+			chA => ch1A,
+			chB => ch1B,
+			count => count1
+
+		);
+
+	rightWheelEncoder : Quad
+		port map (
+			clk => clk,
+			chA => ch2A,
+			chB => ch2B,
+			count => count2
+		);
+
+	leftMotorEncoder : Quad
+		port map (
+			clk => clk,
+			chA => ch3A,
+			chB => ch3B,
+			count => count3
+		);
+
+	rightMotorEncoder : Quad
+		port map (
+			clk => clk,
+			chA => ch4A,
+			chB => ch4B,
+			count => count4
+		);
+
+		
+
+	-- clk2 = 5 ms clock (200 Hz)
+	timer <= 0 when timer >= 250000 else timer + 1;
+	clk2 <= '0' when timer < 125000 else '1';
+
+		
+
+	leftWheelSpeed : Avg
+		port map (
+			clk => clk2,
+			number => to_integer(count1),
+			avg => speed1
+		);
+
+	rightWheelSpeed : Avg
+		port map (
+			clk => clk2,
+			number => to_integer(count2),
+			avg => speed2
+		);
+
+	leftMotorSpeed : Avg
+		port map (
+			clk => clk2,
+			number => to_integer(count3),
+			avg => speed3
+		);
+
+	rightMotorSpeed : Avg
+		port map (
+			clk => clk2,
+			number => to_integer(count4),
+			avg => speed4
+		);
+	
+	count_out <= count1(7 downto 0) when sel = "000" else
+				    count1(15 downto 8) when sel = "001" else
+					 count1(23 downto 16) when sel = "010" else
+					 count1(31 downto 24) when sel = "011" else
+				    count2(7 downto 0) when sel = "100" else
+				    count2(15 downto 8) when sel = "101" else
+					 count2(23 downto 16) when sel = "110" else
+					 count2(31 downto 24);
+
+	dSpeed1 <= speed1 - speed3 / 10; -- mm/s
+	dSpeed2 <= speed2 - speed4 / 10; -- mm/s
+
+	led1 <= '1' when dSpeed1 > 200 else '0';
+	led2 <= '1' when dSpeed2 > 200 else '0';
+
+end architecture decoderArch;

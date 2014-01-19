@@ -1,0 +1,10 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {Z:/SVN/Informatique/FPGA/Decoder/decoder.vhd}
+vcom -93 -work work {Z:/SVN/Informatique/FPGA/Decoder/Quad.vhd}
+

@@ -1,0 +1,35 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.numeric_std.all;
+
+entity Avg is
+	port (
+		clk : in std_logic;
+		number : in integer range 0 to 10000;
+		avg : out integer range 0 to 10000
+	);
+end entity Avg;
+
+architecture AvgArch of Avg is
+	type arry is array (0 to 9) of integer range 0 to 10000;
+	signal numbers : arry;
+begin
+process (clk)
+	begin
+		if rising_edge(clk) then
+			numbers(9) <= numbers(8);
+			numbers(8) <= numbers(7);
+			numbers(7) <= numbers(6);
+			numbers(6) <= numbers(5);
+			numbers(5) <= numbers(4);
+			numbers(4) <= numbers(3);
+			numbers(3) <= numbers(2);
+			numbers(2) <= numbers(1);
+			numbers(1) <= numbers(0);
+			numbers(0) <= number;
+			
+			avg <= numbers(0) + numbers(1) + numbers(2) + numbers(3) + numbers(4) + 
+					 numbers(5) + numbers(6) + numbers(7) + numbers(8) + numbers(9);
+		end if;
+	end process;
+end architecture AvgArch;

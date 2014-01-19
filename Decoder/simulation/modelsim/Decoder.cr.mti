@@ -1,0 +1,13 @@
+Z:/SVN/Informatique/FPGA/Decoder/simulation/modelsim/Decoder.vho {1 {vcom -work work -2002 -explicit Z:/SVN/Informatique/FPGA/Decoder/simulation/modelsim/Decoder.vho
+Model Technology ModelSim ALTERA vcom 10.0d Compiler 2012.01 Jan 18 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package VITAL_Timing
+-- Loading package VITAL_Primitives
+-- Loading package cycloneii_atom_pack
+-- Loading package cycloneii_components
+-- Compiling entity decoder
+-- Compiling architecture structure of decoder
+
+} {} {}}

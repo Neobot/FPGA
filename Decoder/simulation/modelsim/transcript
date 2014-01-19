@@ -1,0 +1,2 @@
+# Compile of Decoder.vho was successful.
+vsim +altera -do Decoder_run_msim_rtl_vhdl.do -l msim_transcript -gui work.decoder

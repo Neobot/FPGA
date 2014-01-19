@@ -1,0 +1,106 @@
+# vsim +altera -do Decoder_run_msim_rtl_vhdl.do -l msim_transcript -gui work.decoder 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.decoder(structure)
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+# Loading cycloneii.cycloneii_and1(altvital)
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)
+# Loading cycloneii.cycloneii_mux21(altvital)
+# Loading cycloneii.cycloneii_dffe(behave)
+# Loading cycloneii.cycloneii_asynch_io(behave)
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+# Loading cycloneii.cycloneii_ena_reg(behave)
+# do Decoder_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Modifying Z:/SVN/Informatique/FPGA/Decoder/simulation/modelsim/Decoder.mpf
+# 
+# vcom -93 -work work {Z:/SVN/Informatique/FPGA/Decoder/decoder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.0d Compiler 2012.01 Jan 18 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity decoder
+# -- Compiling architecture decoderArch of decoder
+# vcom -93 -work work {Z:/SVN/Informatique/FPGA/Decoder/Quad.vhd}
+# Model Technology ModelSim ALTERA vcom 10.0d Compiler 2012.01 Jan 18 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Quad
+# -- Compiling architecture QuadArch of Quad
+# 
+force -freeze sim:/decoder/clk 1 0, 0 {50 ps} -r 100
+add wave  \
+sim:/decoder/clk
+run -all
+force -freeze sim:/decoder/clk 1 0, 0 {10000 ps} -r 20000
+# Break key hit 
+# Simulation stop requested.
+run -all
+# Break key hit 
+# Simulation stop requested.
+# Break key hit 
+run
+restart -f
+# Loading ieee.numeric_std(body)
+# Loading work.decoder(decoderarch)
+# Loading work.quad(quadarch)
+run
+force -freeze sim:/decoder/clk 1 0, 0 {10000 ps} -r 20000
+run
+run
+run
+run
+run -all
+# Break key hit 
+# Simulation stop requested.
+restart -f
+force -freeze sim:/decoder/clk 1 0, 0 {10000 ps} -r 20000
+run
+add wave  \
+sim:/decoder/ch1A
+add wave  \
+sim:/decoder/ch1B
+add wave  \
+sim:/decoder/sel
+add wave  \
+sim:/decoder/count_out
+force -freeze sim:/decoder/count1 0000000100000000 0
+force -freeze sim:/decoder/count2 4648 0
+# Value length (4) does not equal array index length (16).
+# 
+# ** Error: (vsim-4011) Invalid force value: 4648 0.
+# 
+force -freeze sim:/decoder/sel 10 0
+run
+force -freeze sim:/decoder/count2 145 0
+# Value length (3) does not equal array index length (16).
+# 
+# ** Error: (vsim-4011) Invalid force value: 145 0.
+# 
+force -freeze sim:/decoder/count2 1010001010101111 0
+run
+force -freeze sim:/decoder/ch1A 1 0
+force -freeze sim:/decoder/ch1B 0 0
+run
+run -all
+force -freeze sim:/decoder/ch1A 0 0
+force -freeze sim:/decoder/ch1A 1 0
+force -freeze sim:/decoder/ch1B 1 0
+force -freeze sim:/decoder/ch1A 0 0
+force -freeze sim:/decoder/ch1B 0 0
+# Break key hit 
+# Simulation stop requested.
