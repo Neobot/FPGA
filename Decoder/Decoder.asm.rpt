@@ -1,5 +1,5 @@
 Assembler report for Decoder
-Sun Jan 19 23:17:19 2014
+Mon Jan 20 18:14:48 2014
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: //vmware-host/Shared Folders/Windows Share/Decoder/Decoder.sof
-  6. Assembler Device Options: //vmware-host/Shared Folders/Windows Share/Decoder/Decoder.pof
+  5. Assembler Device Options: Z:/Git/FPGA/Decoder/Decoder.sof
+  6. Assembler Device Options: Z:/Git/FPGA/Decoder/Decoder.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Jan 19 23:17:19 2014 ;
+; Assembler Status      ; Successful - Mon Jan 20 18:14:48 2014 ;
 ; Revision Name         ; Decoder                               ;
 ; Top-level Entity Name ; decoder                               ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+----------------------------------------------------------------+
-; Assembler Generated Files                                      ;
-+----------------------------------------------------------------+
-; File Name                                                      ;
-+----------------------------------------------------------------+
-; //vmware-host/Shared Folders/Windows Share/Decoder/Decoder.sof ;
-; //vmware-host/Shared Folders/Windows Share/Decoder/Decoder.pof ;
-+----------------------------------------------------------------+
++---------------------------------+
+; Assembler Generated Files       ;
++---------------------------------+
+; File Name                       ;
++---------------------------------+
+; Z:/Git/FPGA/Decoder/Decoder.sof ;
+; Z:/Git/FPGA/Decoder/Decoder.pof ;
++---------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Assembler Device Options: //vmware-host/Shared Folders/Windows Share/Decoder/Decoder.sof ;
-+----------------+-------------------------------------------------------------------------+
-; Option         ; Setting                                                                 ;
-+----------------+-------------------------------------------------------------------------+
-; Device         ; EP2C5T144C8                                                             ;
-; JTAG usercode  ; 0xFFFFFFFF                                                              ;
-; Checksum       ; 0x0019BB06                                                              ;
-+----------------+-------------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Assembler Device Options: Z:/Git/FPGA/Decoder/Decoder.sof ;
++----------------+------------------------------------------+
+; Option         ; Setting                                  ;
++----------------+------------------------------------------+
+; Device         ; EP2C5T144C8                              ;
+; JTAG usercode  ; 0xFFFFFFFF                               ;
+; Checksum       ; 0x0011487F                               ;
++----------------+------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Assembler Device Options: //vmware-host/Shared Folders/Windows Share/Decoder/Decoder.pof ;
-+--------------------+---------------------------------------------------------------------+
-; Option             ; Setting                                                             ;
-+--------------------+---------------------------------------------------------------------+
-; Device             ; EPCS4                                                               ;
-; JTAG usercode      ; 0x00000000                                                          ;
-; Checksum           ; 0x05A8D0AF                                                          ;
-; Compression Ratio  ; 1                                                                   ;
-+--------------------+---------------------------------------------------------------------+
++-----------------------------------------------------------+
+; Assembler Device Options: Z:/Git/FPGA/Decoder/Decoder.pof ;
++--------------------+--------------------------------------+
+; Option             ; Setting                              ;
++--------------------+--------------------------------------+
+; Device             ; EPCS4                                ;
+; JTAG usercode      ; 0x00000000                           ;
+; Checksum           ; 0x05A25ACE                           ;
+; Compression Ratio  ; 1                                    ;
++--------------------+--------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Jan 19 23:17:18 2014
+    Info: Processing started: Mon Jan 20 18:14:45 2014
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Decoder -c Decoder
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 409 megabytes
-    Info: Processing ended: Sun Jan 19 23:17:20 2014
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 408 megabytes
+    Info: Processing ended: Mon Jan 20 18:14:48 2014
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

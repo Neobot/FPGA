@@ -19,9 +19,9 @@ architecture QuadArch of Quad is
 	signal Br : std_logic_vector (1 downto 0) := "00";
 	signal cnt : unsigned (23 downto 0) := "100000000000000000000000";
 	signal prevCnt : unsigned (23 downto 0) := "100000000000000000000000";
-	signal spd : integer range -25000000 to 25000000 := 0;
+	signal spd : integer range -2500 to 2500 := 0;
 	signal timer : integer range 0 to 250000 := 0;
-	type arry is array (0 to 9) of integer range -10000 to 10000;
+	type arry is array (0 to 9) of integer range -2500 to 2500;
 	signal spd_array : arry;
 	signal spd_sum : integer range -25000 to 25000;
 begin
@@ -88,31 +88,25 @@ begin
 			end if;
 			
 			if (timer = 250000) then		-- 5ms interval
-				spd_array(9) <= spd_array(8);
-				spd_array(8) <= spd_array(7);
-				spd_array(7) <= spd_array(6);
-				spd_array(6) <= spd_array(5);
-				spd_array(5) <= spd_array(4);
-				spd_array(4) <= spd_array(3);
-				spd_array(3) <= spd_array(2);
-				spd_array(2) <= spd_array(1);
-				spd_array(1) <= spd_array(0);
-				spd_array(0) <= to_integer(cnt) - to_integer(prevCnt);
+				spd_array <= (to_integer(cnt) - to_integer(prevCnt)) & spd_array(0 to 8);
 			
-				spd_sum <= spd_array(0) + spd_array(1) + spd_array(2) + spd_array(3) + spd_array(4) + 
-						spd_array(5) + spd_array(6) + spd_array(7) + spd_array(8) + spd_array(9);
+				for n in spd_array'range loop
+					spd_sum <= spd_sum + spd_array(n);  -- sum previous 10 ivervals (i.e. 50 ms)                       
+				end loop;
 				
+				-- spd in mm/seconds
 				if (wheel_type = '0') then
-					spd <= spd_sum;	-- in mm/seconds
+					spd <= (spd_sum * 229) / 256;		-- target mult factor = 0.8941, actual = 0.8945
 				else
-					spd <= spd_sum / 10;
+					spd <= (spd_sum * 13) / 128;		-- target mult factor = 0.1021, actual = 0.1016
 				end if;
 				
 				-- calculation details for wheel encoders : 
 				-- sum = steps per 50 ms
 				-- * 20 => steps / seconds
 				-- / 4048 => wheel turns / seconds
-				-- * (65 * pi) => mm / seconds
+				-- * (57.6 * pi) => mm / seconds
+				-- = 0.8941
 
 				-- calculation details for motor encoders : 
 				-- sum = steps per 50 ms
@@ -120,6 +114,7 @@ begin
 				-- / 2000 => motor turns / seconds
 				-- / 20 => wheel turns / seconds
 				-- * (65 * pi) => mm / seconds
+				-- = 0.1021
 				
 				prevCnt <= cnt;
 				timer <= 0;
