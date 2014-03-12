@@ -96,7 +96,7 @@ begin
 				
 				-- spd in mm/seconds
 				if (wheel_type = '0') then
-					spd <= (spd_sum * 229) / 256;		-- target mult factor = 0.8941, actual = 0.8945
+					spd <= (spd_sum * 226) / 256;		-- target mult factor = 0.8828, actual = 0.8835
 				else
 					spd <= (spd_sum * 13) / 128;		-- target mult factor = 0.1021, actual = 0.1016
 				end if;
@@ -104,9 +104,9 @@ begin
 				-- calculation details for wheel encoders : 
 				-- sum = steps per 50 ms
 				-- * 20 => steps / seconds
-				-- / 4048 => wheel turns / seconds
+				-- / 4096 => wheel turns / seconds
 				-- * (57.6 * pi) => mm / seconds
-				-- = 0.8941
+				-- = 0.8835
 
 				-- calculation details for motor encoders : 
 				-- sum = steps per 50 ms
