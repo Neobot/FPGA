@@ -15,91 +15,90 @@ entity Quad is
 end entity Quad;
 
 architecture QuadArch of Quad is
+	signal Ar : std_logic_vector (1 downto 0) := "00";
+	signal Br : std_logic_vector (1 downto 0) := "00";
+	signal cnt : unsigned (23 downto 0) := "100000000000000000000000";
+	signal prevCnt : unsigned (23 downto 0) := "100000000000000000000000";
+	signal spd : integer range -2500 to 2500 := 0;
+	signal timer : integer range 0 to 250000 := 0;
+	type arry is array (0 to 9) of integer range -2500 to 2500;
+	signal spd_array : arry;
+	signal spd_sum : integer range -25000 to 25000;
 begin
 	process (clk)
-	variable Ar : std_logic_vector (1 downto 0) := "00";
-	variable Br : std_logic_vector (1 downto 0) := "00";
-	variable cnt : unsigned (23 downto 0) := "100000000000000000000000";
-	variable prevCnt : unsigned (23 downto 0) := "100000000000000000000000";
-	variable spd : integer range -2500 to 2500 := 0;
-	variable timer : integer range 0 to 250000 := 0;
-	type arry is array (0 to 9) of integer range -2500 to 2500;
-	variable spd_array : arry;
-	variable spd_sum : integer range -25000 to 25000;
 	begin
 		if rising_edge(clk) then
-			Ar(1) := Ar(0);
-			Ar(0) := chA;
-			Br(1) := Br(0);
-			Br(0) := chB;
+			Ar(1) <= Ar(0);
+			Ar(0) <= chA;
+			Br(1) <= Br(0);
+			Br(0) <= chB;
 			
 			if (invert = '1') then
 				if (Ar = "01") then		-- rising edge of A
 					if (Br(0) = '0') then 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					else 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					end if;
 				elsif (Ar = "10") then		-- falling edge of A
 					if (Br(0) = '1') then 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					else 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					end if;
 				elsif (Br = "01") then		-- rising edge of B
 					if (Ar(0) = '1') then 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					else 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					end if;
 				elsif (Br = "10") then		-- falling edge of B
 					if (Ar(0) = '0') then 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					else 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					end if;
 				end if;
 			else
 				if (Ar = "01") then		-- rising edge of A
 					if (Br(0) = '0') then 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					else 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					end if;
 				elsif (Ar = "10") then		-- falling edge of A
 					if (Br(0) = '1') then 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					else 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					end if;
 				elsif (Br = "01") then		-- rising edge of B
 					if (Ar(0) = '1') then 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					else 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					end if;
 				elsif (Br = "10") then		-- falling edge of B
 					if (Ar(0) = '0') then 
-						cnt := cnt + 1;
+						cnt <= cnt + 1;
 					else 
-						cnt := cnt - 1;
+						cnt <= cnt - 1;
 					end if;
 				end if;
 			end if;
 			
 			if (timer = 250000) then		-- 5ms interval
-				spd_array := (to_integer(cnt) - to_integer(prevCnt)) & spd_array(0 to 8);
+				spd_array <= (to_integer(cnt) - to_integer(prevCnt)) & spd_array(0 to 8);
 			
-				spd_sum := 0;
 				for n in spd_array'range loop
-					spd_sum := spd_sum + spd_array(n);  -- sum previous 10 ivervals (i.e. 50 ms)                       
+					spd_sum <= spd_sum + spd_array(n);  -- sum previous 10 ivervals (i.e. 50 ms)                       
 				end loop;
 				
 				-- spd in mm/seconds
 				if (wheel_type = '0') then
-					spd := (spd_sum * 226) / 256;		-- target mult factor = 0.8828, actual = 0.8835
+					spd <= (spd_sum * 226) / 256;		-- target mult factor = 0.8828, actual = 0.8835
 				else
-					spd := -(spd_sum * 13) / 128;		-- target mult factor = 0.1021, actual = 0.1016
+					spd <= (spd_sum * 13) / 128;		-- target mult factor = 0.1021, actual = 0.1016
 				end if;
 				
 				-- calculation details for wheel encoders : 
@@ -117,16 +116,16 @@ begin
 				-- * (65 * pi) => mm / seconds
 				-- = 0.1021
 				
-				prevCnt := cnt;
-				timer := 0;
+				prevCnt <= cnt;
+				timer <= 0;
 			else
-				timer := timer + 1;
+				timer <= timer + 1;
 			end if;
 			
 		end if;
-
-		count <= std_logic_vector(cnt);
-		speed <= std_logic_vector(to_unsigned(spd+8388608, 24));		-- offset speed so its always positive
 	end process;
+
+	count <= std_logic_vector(cnt);
+	speed <= std_logic_vector(to_unsigned(spd+8388608, 24));		-- offset speed so its always positive
 			
 end architecture QuadArch;

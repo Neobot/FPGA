@@ -4,10 +4,10 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C5T144) Path("//vmware-host/Shared Folders/Windows Share/Decoder/") File("Decoder.sof") MfrSpec(OpMask(1));
+		Device PartName(EPCS4) Path("Z:/Git/FPGA/Decoder/") File("Decoder.pof") MfrSpec(OpMask(3) Child_OpMask(1 3));
 
 ChainEnd;
 
 AlteraBegin;
-	ChainType(JTAG);
+	ChainType(asc);
 AlteraEnd;
